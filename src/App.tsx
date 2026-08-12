@@ -3,13 +3,16 @@ import { useEffect, useState } from 'react'
 import { Footer } from './components/layout/Footer'
 import { Navbar } from './components/layout/Navbar'
 import { About } from './components/sections/About'
-import { CurrentProject } from './components/sections/CurrentProject'
+import { Donate } from './components/sections/Donate'
+import { Events } from './components/sections/Events'
 import { FAQ } from './components/sections/FAQ'
-import { FinalCTA } from './components/sections/FinalCTA'
+import { Flagship } from './components/sections/Flagship'
+import { Gallery } from './components/sections/Gallery'
+import { GetInvolved } from './components/sections/GetInvolved'
 import { Hero } from './components/sections/Hero'
-import { HowItWorks } from './components/sections/HowItWorks'
-import { Impact } from './components/sections/Impact'
-import { Problem } from './components/sections/Problem'
+import { Intro } from './components/sections/Intro'
+import { Leadership } from './components/sections/Leadership'
+import { Programs } from './components/sections/Programs'
 import { uiText } from './data/content'
 
 function App() {
@@ -31,13 +34,16 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Problem />
-        <CurrentProject />
-        <HowItWorks />
+        <Intro />
         <About />
-        <Impact />
+        <Programs />
+        <Flagship />
+        <Events />
+        <Gallery />
+        <GetInvolved />
+        <Leadership />
         <FAQ />
-        <FinalCTA />
+        <Donate />
       </main>
       <Footer />
 

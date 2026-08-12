@@ -1,13 +1,13 @@
 import { Info } from 'lucide-react'
 import heroImage from '../../assets/hero.png'
 import { hero, uiText } from '../../data/content'
+import { DonateButton } from '../ui/DonateButton'
 
 export function Hero() {
   return (
     <section id="home" className="relative isolate min-h-[90vh] overflow-hidden bg-warm-white pt-24">
       <div className="absolute inset-0 -z-10">
-        {/* HERO IMAGE PLACEHOLDER */}
-        <img src={heroImage} alt={uiText.impactAlt} className="h-full w-full object-cover opacity-20" />
+        <img src={heroImage} alt={uiText.heroAlt} className="h-full w-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-br from-warm-white via-warm-white/90 to-light-sand/80" />
       </div>
 
@@ -22,14 +22,9 @@ export function Hero() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">{hero.subhead}</p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <DonateButton variant="primary" label={hero.ctaPrimary} />
             <a
-              href="#donate"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-7 py-3 text-base font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-primary/90"
-            >
-              {hero.ctaPrimary}
-            </a>
-            <a
-              href="#impact"
+              href="#programs"
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-secondary/20 bg-white px-7 py-3 text-base font-bold text-secondary shadow-md transition hover:-translate-y-0.5 hover:border-secondary/40"
             >
               {hero.ctaSecondary}

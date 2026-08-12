@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-react'
+
 export interface NavLink {
   label: string
   href: string
@@ -16,17 +18,27 @@ export interface TextSectionContent {
   text: string
 }
 
-export interface DonationBreakdownItem {
-  amount: number
-  description: string
+export interface AboutContent extends TextSectionContent {
+  eyebrow: string
+  mission: string
+  vision: string
+  founder: string
+  founderTitle: string
 }
 
-export interface CurrentProjectContent extends TextSectionContent {
-  goal: number
-  raised: number
-  breakdown: DonationBreakdownItem[]
-  buttonText: string
-  trustNote: string
+/** A focus area / program shown as a card. Icons come from lucide-react. */
+export interface Program {
+  id: string
+  title: string
+  icon: LucideIcon
+  description: string
+  items: string[]
+}
+
+export interface FlagshipContent extends TextSectionContent {
+  eyebrow: string
+  highlights: string[]
+  note: string
 }
 
 export interface HowItWorksStep {
@@ -36,19 +48,44 @@ export interface HowItWorksStep {
 }
 
 export interface HowItWorksContent {
+  eyebrow: string
   headline: string
+  text: string
   steps: HowItWorksStep[]
 }
 
-export interface AboutContent extends TextSectionContent {
-  founder: string
-  founderTitle: string
+/** Event record. Shaped to map directly onto a future Supabase `events` table. */
+export interface EventItem {
+  id: string
+  title: string
+  date: string
+  location: string
+  description: string
+  programArea: string
+  image: string | null
+  status: 'upcoming' | 'past'
 }
 
-export interface ImpactContent extends TextSectionContent {
-  galleryPlaceholder: string
-  videoPlaceholder: string
-  date: string
+export type GalleryCategory =
+  | 'Health & Hygiene'
+  | 'Education'
+  | 'Community Outreach'
+  | 'Humanitarian Response'
+  | 'Economic Empowerment'
+  | 'Youth & Leadership'
+
+/** Gallery record. Shaped to map onto a future Supabase `gallery` table. */
+export interface GalleryItem {
+  id: string
+  title: string
+  category: GalleryCategory
+  image: string | null
+  alt: string
+}
+
+export interface LeaderRole {
+  role: string
+  name: string | null
 }
 
 export interface FaqItem {
@@ -56,17 +93,39 @@ export interface FaqItem {
   a: string
 }
 
-export interface FinalCtaContent extends TextSectionContent {
+export interface DonateContent {
+  eyebrow: string
+  headline: string
+  text: string
   ctaPrimary: string
   ctaSecondary: string
 }
 
+/**
+ * Donation configuration. Presentation reads this through the donation service,
+ * so a real provider (Paystack, Flutterwave, Stripe, ...) can be wired in later
+ * by flipping `enabled` and implementing the service without UI changes.
+ */
+export interface DonationConfig {
+  enabled: boolean
+  comingSoonMessage: string
+}
+
+export interface ContactContent {
+  phone: string
+  email: string
+  addressLines: string[]
+  founder: string
+}
+
 export interface FooterContent {
   brand: string
+  brandShort: string
   tagline: string
-  email: string
-  whatsapp: string
+  contact: ContactContent
   instagram: string
   instagramUrl: string
+  facebook: string
+  facebookUrl: string
   year: number
 }

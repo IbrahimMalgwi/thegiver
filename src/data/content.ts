@@ -1,131 +1,280 @@
+import {
+  Briefcase,
+  Droplets,
+  GraduationCap,
+  HandHeart,
+  ShieldCheck,
+  Users,
+} from 'lucide-react'
 import type {
   AboutContent,
-  CurrentProjectContent,
+  DonateContent,
+  DonationConfig,
   FaqItem,
-  FinalCtaContent,
+  FlagshipContent,
   FooterContent,
   HeroContent,
   HowItWorksContent,
-  ImpactContent,
+  LeaderRole,
   NavLink,
+  Program,
   TextSectionContent,
 } from '../types'
+
+export const ORG_NAME = 'Queen Shavah Sustainable Development Initiative'
+export const ORG_NAME_FULL = 'QUEEN SHAVAH SUSTAINABLE DEVELOPMENT INITIATIVE'
+export const ORG_NAME_SHORT = 'Queen Shavah'
+export const ORG_TAGLINE = 'Dignity for All. Giving Hands. Caring Hearts. No One Left Behind.'
+export const ORG_TAGLINE_SHORT = 'Dignity for All.'
 
 export const navLinks: NavLink[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
+  { label: 'Programs', href: '#programs' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Impact', href: '#impact' },
-  { label: 'Donate', href: '#donate' },
+  { label: 'Events', href: '#events' },
+  { label: 'Gallery', href: '#gallery' },
+  { label: 'Get Involved', href: '#get-involved' },
   { label: 'Contact', href: '#contact' },
 ]
 
 export const hero: HeroContent = {
-  headline: 'Give Dignity. Give Education. Give Hope.',
-  subhead: 'We provide menstrual hygiene kits so girls in Nigeria never have to miss school.',
-  ctaPrimary: 'Donate Now',
-  ctaSecondary: 'See Our Impact',
-  caption: '$12 sponsors 1 girl for 6 months',
+  headline: 'Dignity for All. Opportunity for Everyone.',
+  subhead:
+    'Queen Shavah Sustainable Development Initiative is committed to empowering vulnerable individuals, families, and communities across Nigeria through health, education, protection, economic empowerment, and sustainable development.',
+  ctaPrimary: 'Support Our Mission',
+  ctaSecondary: 'Explore Our Programs',
+  caption: 'A Nigerian nonprofit for dignity, health, education & empowerment',
 }
 
-export const problem: TextSectionContent = {
-  headline: 'No Pads. No School.',
-  text: "In Nigeria, thousands of girls miss 4-5 days of school every month because they lack basic menstrual hygiene products. Missing school means falling behind. Falling behind means dropping out. This isn't just about pads. It's about dignity, health, and the right to an education. At The Giver, we're changing that. One kit. One girl. One classroom at a time.",
-}
-
-export const currentProject: CurrentProjectContent = {
-  headline: 'Project #1: Dignity for 200 Nigerian Girls',
-  text: 'Our goal is to provide 200 girls in 2 secondary schools with 6 months of menstrual hygiene kits. Each kit includes: Pads, soap, underwear, and hygiene education.',
-  goal: 2400,
-  raised: 1200,
-  breakdown: [
-    { amount: 12, description: '1 girl for 6 months' },
-    { amount: 60, description: '5 girls' },
-    { amount: 240, description: '20 girls' },
-  ],
-  buttonText: 'Donate via GoFundMe',
-  trustNote: 'We post photo and video updates after every distribution. 100% of your donation goes to kits.',
-}
-
-export const howItWorks: HowItWorksContent = {
-  headline: 'How Your Gift Reaches Them',
-  steps: [
-    {
-      step: 1,
-      title: 'You Give',
-      description: 'Donate securely online. Choose a one-time gift or become a monthly Giver.',
-    },
-    {
-      step: 2,
-      title: 'We Deliver',
-      description:
-        'Our team purchases kits locally and delivers them directly to schools in Nigeria with hygiene training.',
-    },
-    {
-      step: 3,
-      title: 'You See Impact',
-      description: 'We send you photos, stories, and updates so you can see the girls you helped.',
-    },
-  ],
+export const intro: TextSectionContent = {
+  headline: 'The hands that give. The heart that cares.',
+  text: 'Across Nigeria, too many people are held back by poverty, poor health, unsafe environments, and limited access to education and opportunity. We work alongside communities to change that — combining direct programs, advocacy, partnerships, and sustainable development so that dignity, safety, and opportunity are within reach for everyone, no matter their gender or circumstance.',
 }
 
 export const about: AboutContent = {
-  headline: 'We Believe Every Girl Deserves to Learn',
-  text: 'The Giver was founded in 2026 to end period poverty in Nigeria. It started with a simple belief: no girl should miss school because of her period. We began with 200 girls in Nigeria. Our vision is to reach over 200,000 girls across Nigeria. This is more than charity. This is dignity.',
-  founder: 'Queen Shavah',
-  founderTitle: 'Teacher. Advocate. Giver.',
+  eyebrow: 'About Us',
+  headline: 'Empowering people and communities across Nigeria',
+  text: 'Queen Shavah Sustainable Development Initiative is a Nigerian nonprofit organization committed to empowering individuals, families, and communities across Nigeria. We believe that dignity, education, safety, health, and opportunity should not depend on gender, poverty, or circumstance.',
+  mission:
+    'To be the hands that give and the heart that cares. We advance health, education, safety, livelihoods, and leadership for vulnerable persons through direct programs, advocacy, partnerships, and sustainable community development.',
+  vision:
+    'A Nigeria where every person lives with dignity, safety, education, and the opportunity to lead and thrive.',
+  founder: 'Ruth Elisha Shavah',
+  founderTitle: 'Founder & Executive Director',
 }
 
-export const impact: ImpactContent = {
-  headline: 'See The Difference You Make',
-  text: 'Follow along as we deliver kits and share stories from the girls.',
-  galleryPlaceholder: 'Photo Gallery Placeholder',
-  videoPlaceholder: 'Video Update Placeholder',
-  date: 'September 2026',
+export const programsIntro: TextSectionContent = {
+  headline: 'Our Programs',
+  text: 'We work across six connected focus areas, meeting immediate needs while building the foundations for lasting change.',
+}
+
+export const programs: Program[] = [
+  {
+    id: 'health-hygiene',
+    title: 'Health & Hygiene',
+    icon: Droplets,
+    description:
+      'Improving health and hygiene for vulnerable people, with menstrual hygiene as a flagship focus.',
+    items: ['Menstrual hygiene', 'Dignity kits', 'WASH', 'Health education', 'Disease prevention'],
+  },
+  {
+    id: 'safety-protection',
+    title: 'Safety & Protection',
+    icon: ShieldCheck,
+    description:
+      'Preventing gender-based violence and standing with survivors and vulnerable persons.',
+    items: [
+      'Gender-based violence prevention',
+      'Survivor support',
+      'Counselling referrals',
+      'Safe spaces',
+      'Protection of vulnerable persons',
+    ],
+  },
+  {
+    id: 'crisis-response',
+    title: 'Crisis Response',
+    icon: HandHeart,
+    description:
+      'Providing humanitarian assistance to displaced and vulnerable families in times of need.',
+    items: [
+      'Emergency relief',
+      'Food',
+      'Shelter',
+      'Dignity kits',
+      'Support for displaced and vulnerable families',
+    ],
+  },
+  {
+    id: 'education-scholarships',
+    title: 'Education & Scholarships',
+    icon: GraduationCap,
+    description:
+      'Removing barriers to learning through scholarships, mentorship, and better school environments.',
+    items: [
+      'Scholarships',
+      'Learning materials',
+      'Mentorship',
+      'Leadership development',
+      'School infrastructure',
+      'Libraries and sanitary facilities',
+    ],
+  },
+  {
+    id: 'economic-empowerment',
+    title: 'Economic Empowerment',
+    icon: Briefcase,
+    description:
+      'Building livelihoods and food security through skills, training, and enterprise support.',
+    items: [
+      'Skills acquisition',
+      'Vocational training',
+      'Micro-enterprise support',
+      'Livelihood programs',
+      'Food security',
+    ],
+  },
+  {
+    id: 'leadership-governance',
+    title: 'Leadership & Governance',
+    icon: Users,
+    description:
+      'Growing confident, inclusive leaders and strengthening civic participation.',
+    items: [
+      'Leadership development',
+      'Civic engagement',
+      'Advocacy',
+      'Public speaking',
+      'Inclusive representation',
+    ],
+  },
+]
+
+export const flagship: FlagshipContent = {
+  eyebrow: 'Flagship Program',
+  headline: 'Dignity for All',
+  text: 'Dignity for All provides menstrual hygiene products, health education, and hygiene support to vulnerable girls and students, helping remove barriers that can prevent girls from staying in school.',
+  highlights: [
+    'Menstrual hygiene products and dignity kits',
+    'Practical health and hygiene education',
+    'Support that helps girls stay in school',
+  ],
+  note: 'Part of our Health & Hygiene program. We share updates from our activities as they happen.',
+}
+
+export const getInvolved: HowItWorksContent = {
+  eyebrow: 'Get Involved',
+  headline: 'Be part of the change',
+  text: 'There are many ways to help us reach more people with dignity, health, education, and opportunity.',
+  steps: [
+    {
+      step: 1,
+      title: 'Give',
+      description:
+        'Support our programs with a donation. Online giving is coming soon — reach out to us in the meantime to contribute.',
+    },
+    {
+      step: 2,
+      title: 'Volunteer',
+      description:
+        'Share your time and skills with our community initiatives, outreaches, and events across Nigeria.',
+    },
+    {
+      step: 3,
+      title: 'Partner',
+      description:
+        'Organizations, schools, and institutions can partner with us to expand our reach and deepen our impact.',
+    },
+  ],
+}
+
+export const leadershipIntro: TextSectionContent = {
+  headline: 'Leadership & Governance',
+  text: 'Our work is guided by a dedicated team committed to accountability, transparency, and service.',
+}
+
+export const leadershipRoles: LeaderRole[] = [
+  { role: 'Board Chairman', name: null },
+  { role: 'Executive Director / Founder', name: 'Ruth Elisha Shavah' },
+  { role: 'Secretary', name: null },
+  { role: 'Treasurer', name: null },
+  { role: 'Program Director', name: null },
+]
+
+export const eventsIntro: TextSectionContent = {
+  headline: 'Events',
+  text: 'Join us at our community initiatives, outreaches, and gatherings. Check back here for what is coming up next.',
+}
+
+export const galleryIntro: TextSectionContent = {
+  headline: 'Gallery & Impact',
+  text: 'Moments from our work across Nigeria — from health and hygiene to education, outreach, and empowerment. Photos from our activities will appear here.',
 }
 
 export const faqs: FaqItem[] = [
   {
-    q: 'Where does my money go?',
-    a: '100% goes to purchasing kits and delivery. We post receipts and photos after each distribution.',
+    q: 'What does Queen Shavah Sustainable Development Initiative do?',
+    a: 'We are a Nigerian nonprofit working across health and hygiene, safety and protection, crisis response, education, economic empowerment, and leadership to help vulnerable people and communities live with dignity and opportunity.',
   },
   {
-    q: 'Can I donate from the US?',
-    a: 'Yes! We accept PayPal, Cards, and GoFundMe. US donors can get a receipt.',
+    q: 'Where do you work?',
+    a: 'We work with individuals, families, and communities across Nigeria.',
   },
-  { q: 'Can I sponsor a specific school?', a: "Yes. Contact us and we'll set it up." },
+  {
+    q: 'How can I support your work?',
+    a: 'You can give, volunteer, or partner with us. Online donations are coming soon — until then, please contact us to discuss how you would like to help.',
+  },
+  {
+    q: 'Can my organization partner with you?',
+    a: 'Yes. Schools, institutions, and organizations are welcome to partner with us. Reach out through our contact details and we will follow up.',
+  },
 ]
 
-export const finalCta: FinalCtaContent = {
-  headline: 'Join The Movement',
-  text: '200 girls are waiting. Be the reason they stay in school.',
-  ctaPrimary: 'Donate $12 Now',
-  ctaSecondary: 'Become a Monthly Giver',
+export const donate: DonateContent = {
+  eyebrow: 'Donate',
+  headline: 'Support Our Mission',
+  text: 'Your generosity helps us advance dignity, health, education, protection, and opportunity across Nigeria. An online donation platform is on the way — in the meantime, contact us to learn how you can give.',
+  ctaPrimary: 'Get in Touch to Give',
+  ctaSecondary: 'Explore Our Programs',
+}
+
+export const donationConfig: DonationConfig = {
+  enabled: false,
+  comingSoonMessage: 'Online donations are coming soon.',
 }
 
 export const footer: FooterContent = {
-  brand: 'The Giver',
-  tagline: 'Give Dignity. Give Education. Give Hope.',
-  email: 'thegiver@gmail.com',
-  whatsapp: '+234 8178848534',
-  instagram: '@thegivergirls',
-  instagramUrl: 'https://instagram.com/thegivergirls',
+  brand: ORG_NAME,
+  brandShort: ORG_NAME_SHORT,
+  tagline: ORG_TAGLINE,
+  contact: {
+    phone: '+234 817 884 8534',
+    email: 'info@queenshavahsustainabledevelopmentinitiative.org',
+    addressLines: [
+      'House No 262 Odeh Adeka Street',
+      'Greencity Residences',
+      'Karsana District, Gwarinpa',
+      'Abuja, Nigeria',
+    ],
+    founder: 'Ruth Elisha Shavah',
+  },
+  instagram: '@queenshavahinitiative',
+  instagramUrl: 'https://instagram.com/queenshavahinitiative',
+  facebook: 'Queen Shavah Initiative',
+  facebookUrl: 'https://facebook.com/queenshavahinitiative',
   year: 2026,
 }
 
 export const uiText = {
   mobileMenuOpen: 'Open menu',
   mobileMenuClose: 'Close menu',
-  donationLink: '#',
   raisedLabel: 'Raised',
   goalLabel: 'Goal',
-  progressLabel: '50% funded',
-  impactAlt: 'The Giver dignity kit distribution preview',
-  galleryAlt: 'Photo gallery placeholder',
-  videoAlt: 'Video update placeholder',
-  playVideo: 'Play video',
+  heroAlt: `${ORG_NAME_SHORT} community programs across Nigeria`,
   footerAboutHeading: 'About',
   footerContactHeading: 'Contact Info',
-  footerSocialHeading: 'Social Links',
+  footerSocialHeading: 'Follow Us',
   backToTop: 'Back to top',
+  donateCtaLabel: 'Donate',
 }
