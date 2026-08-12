@@ -2,20 +2,44 @@
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 
+/*
+ * Brand color tokens — mirror of src/theme/colors.ts.
+ * Tailwind v4 generates utilities from these, e.g. bg-brand-purple,
+ * text-brand-gold, bg-surface-green, text-muted, bg-success.
+ */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-primary: #e76f51;
-  --color-secondary: #264653;
-  --color-accent: #f4a261;
-  --color-warm-white: #fffbf5;
-  --color-light-sand: #f8f4ec;
-  --color-ink: #1a1a1a;
-  --color-muted: #4a4a4a;
+
+  /* Brand */
+  --color-brand-purple: #42106b;
+  --color-brand-purple-dark: #32104f;
+  --color-brand-green: #2f8734;
+  --color-brand-green-dark: #22662a;
+  --color-brand-gold: #d99a0b;
+  --color-brand-gold-dark: #b98108;
+
+  /* Section / surface backgrounds */
+  --color-surface-white: #ffffff;
+  --color-surface-warm: #fafaf7;
+  --color-surface-green: #f1f7f1;
+  --color-surface-purple: #f6f1f9;
+  --color-surface-gold: #fff8e8;
+
+  /* Text */
+  --color-ink: #242124;
+  --color-muted: #5f5a61;
+  --color-faint: #858087;
+
+  /* Functional status */
+  --color-success: #2f8734;
+  --color-warning: #d99a0b;
+  --color-error: #c83b3b;
+  --color-info: #3578a8;
 }
 
 :root {
-  color: #1a1a1a;
-  background: #fffbf5;
+  color: #242124;
+  background: #fafaf7;
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,7 +54,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #fffbf5;
+  background: #fafaf7;
 }
 
 button,

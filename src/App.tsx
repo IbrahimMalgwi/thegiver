@@ -50,7 +50,7 @@ function App() {
       {showBackToTop ? (
         <a
           href="#home"
-          className="fixed bottom-5 right-5 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-xl transition hover:-translate-y-0.5"
+          className="fixed bottom-5 right-5 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-purple text-white shadow-xl transition hover:-translate-y-0.5"
           aria-label={uiText.backToTop}
         >
           <ArrowUp aria-hidden="true" size={22} />
