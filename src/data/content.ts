@@ -196,11 +196,31 @@ export const leadershipIntro: TextSectionContent = {
 }
 
 export const leadershipRoles: LeaderRole[] = [
-  { role: 'Board Chairman', name: null },
-  { role: 'Executive Director / Founder', name: 'Ruth Elisha Shavah' },
-  { role: 'Secretary', name: null },
-  { role: 'Country Director', name: null },
-  { role: 'Program Director', name: null },
+  {
+    role: 'Board Chairman',
+    name: 'Philip Gana Malgwi',
+    description: 'Oversees strategy and represents the NGO publicly.',
+  },
+  {
+    role: 'Executive Director / Founder',
+    name: 'Ruth Elisha Shavah',
+    description: 'Leads daily operations, programs, and organizational delivery.',
+  },
+  {
+    role: 'Secretary',
+    name: 'Esther Kanawa Ahinda',
+    description: 'Maintains organizational records, meeting minutes, and CAC filings.',
+  },
+  {
+    role: 'Treasurer',
+    name: 'Elisha Andrew Shavah',
+    description: 'Oversees financial management, budgets, and financial reporting.',
+  },
+  {
+    role: 'Program Director',
+    name: 'Zachariah Bulus',
+    description: 'Oversees Dignity Kits, Scholarships, and GBV programs.',
+  },
 ]
 
 export const eventsIntro: TextSectionContent = {

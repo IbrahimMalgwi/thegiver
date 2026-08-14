@@ -87,6 +87,7 @@ export interface GalleryItem {
 export interface LeaderRole {
   role: string
   name: string | null
+  description?: string
 }
 
 export interface FaqItem {
