@@ -30,9 +30,23 @@ export function About() {
         </div>
 
         <div className="mx-auto mt-6 max-w-3xl rounded-lg border border-brand-purple/10 bg-white p-6 text-center shadow-md">
-          <p className="text-sm font-bold uppercase tracking-normal text-brand-green">{about.founderTitle}</p>
-          <p className="mt-2 text-2xl font-extrabold tracking-normal text-brand-purple">{about.founder}</p>
+          <p className="text-sm font-bold uppercase tracking-normal text-brand-green">
+            {about.founderTitle}
+          </p>
+
+          <p className="mt-2 text-2xl font-extrabold tracking-normal text-brand-purple">
+            {about.founder}
+          </p>
+
+          <p className="mt-1 text-sm font-medium tracking-wide text-brand-purple/60">
+            {about.founderCredentials}
+          </p>
         </div>
+
+        {/*<div className="mx-auto mt-6 max-w-3xl rounded-lg border border-brand-purple/10 bg-white p-6 text-center shadow-md">*/}
+        {/*  <p className="text-sm font-bold uppercase tracking-normal text-brand-green">{about.founderTitle}</p>*/}
+        {/*  <p className="mt-2 text-2xl font-extrabold tracking-normal text-brand-purple">{about.founder}</p>*/}
+        {/*</div>*/}
       </div>
     </section>
   )

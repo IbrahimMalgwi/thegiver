@@ -61,6 +61,7 @@ export const about: AboutContent = {
   vision:
     'A Nigeria where every person lives with dignity, safety, education, and the opportunity to lead and thrive.',
   founder: 'Ruth Elisha Shavah',
+  founderCredentials: 'ACTI, ACA, FCCrFA',
   founderTitle: 'Founder & Executive Director',
 }
 
@@ -76,7 +77,7 @@ export const programs: Program[] = [
     icon: Droplets,
     description:
       'Improving health and hygiene for vulnerable people, with menstrual hygiene as a flagship focus.',
-    items: ['Menstrual hygiene', 'Dignity kits', 'WASH', 'Health education', 'Disease prevention'],
+    items: ['Menstrual health hygiene for girls', 'Dignity kits', 'WASH', 'Health education', 'Disease prevention'],
   },
   {
     id: 'safety-protection',
@@ -156,9 +157,9 @@ export const flagship: FlagshipContent = {
   headline: 'Dignity for All',
   text: 'Dignity for All provides menstrual hygiene products, health education, and hygiene support to vulnerable girls and students, helping remove barriers that can prevent girls from staying in school.',
   highlights: [
-    'Menstrual hygiene products and dignity kits',
+    'Menstrual health hygiene for girls',
     'Practical health and hygiene education',
-    'Support that helps girls stay in school',
+    'Support Let\'s keep girls in school',
   ],
   note: 'Part of our Health & Hygiene program. We share updates from our activities as they happen.',
 }
@@ -198,7 +199,7 @@ export const leadershipRoles: LeaderRole[] = [
   { role: 'Board Chairman', name: null },
   { role: 'Executive Director / Founder', name: 'Ruth Elisha Shavah' },
   { role: 'Secretary', name: null },
-  { role: 'Treasurer', name: null },
+  { role: 'Country Director', name: null },
   { role: 'Program Director', name: null },
 ]
 
@@ -252,7 +253,7 @@ export const footer: FooterContent = {
     phone: '+234 817 884 8534',
     email: 'info@queenshavahsustainabledevelopmentinitiative.org',
     addressLines: [
-      'House No 262 Odeh Adeka Street',
+      'Plot 262 Odeh Adeka Street',
       'Greencity Residences',
       'Karsana District, Gwarinpa',
       'Abuja, Nigeria',

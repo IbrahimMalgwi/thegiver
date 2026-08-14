@@ -24,6 +24,7 @@ export interface AboutContent extends TextSectionContent {
   vision: string
   founder: string
   founderTitle: string
+  founderCredentials: string
 }
 
 /** A focus area / program shown as a card. Icons come from lucide-react. */
