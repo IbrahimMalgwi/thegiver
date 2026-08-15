@@ -1,4 +1,5 @@
 import { Compass, Target } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { about } from '../../data/content'
 
 export function About() {
@@ -12,21 +13,31 @@ export function About() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <article className="rounded-lg bg-surface-green p-8 shadow-md">
+          <motion.article
+            whileHover={{ y: -6 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="rounded-lg bg-surface-green p-8 shadow-md transition-shadow hover:shadow-xl"
+          >
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-green text-white">
               <Target aria-hidden="true" size={24} />
             </div>
             <h3 className="mt-5 text-xl font-bold tracking-normal text-brand-purple">Our Mission</h3>
             <p className="mt-3 leading-relaxed text-muted">{about.mission}</p>
-          </article>
+          </motion.article>
 
-          <article className="rounded-lg bg-surface-purple p-8 shadow-md">
+          <motion.article
+            whileHover={{ y: -6 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="rounded-lg bg-surface-purple p-8 shadow-md transition-shadow hover:shadow-xl"
+          >
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-purple text-white">
               <Compass aria-hidden="true" size={24} />
             </div>
             <h3 className="mt-5 text-xl font-bold tracking-normal text-brand-purple">Our Vision</h3>
             <p className="mt-3 leading-relaxed text-muted">{about.vision}</p>
-          </article>
+          </motion.article>
         </div>
 
         <div className="mx-auto mt-6 max-w-3xl rounded-lg border border-brand-purple/10 bg-white p-6 text-center shadow-md">
