@@ -197,29 +197,29 @@ export const leadershipIntro: TextSectionContent = {
 
 export const leadershipRoles: LeaderRole[] = [
   {
-    role: 'Board Chairman',
-    name: 'Philip Gana Malgwi',
-    description: 'Oversees strategy and represents the NGO publicly.',
-  },
-  {
     role: 'Executive Director / Founder',
     name: 'Ruth Elisha Shavah',
     description: 'Leads daily operations, programs, and organizational delivery.',
   },
   {
     role: 'Secretary',
-    name: 'Esther Kanawa Ahinda',
-    description: 'Maintains organizational records, meeting minutes, and CAC filings.',
+    name: 'Aishah Olabisi Busari',
+    description: 'Oversees documentary and information.',
   },
   {
-    role: 'Treasurer',
-    name: 'Elisha Andrew Shavah',
-    description: 'Oversees financial management, budgets, and financial reporting.',
-  },
-  {
-    role: 'Program Director',
-    name: 'Zachariah Bulus',
+    role: 'Board Chairman',
+    name: 'Zakariah Bulus',
     description: 'Oversees Dignity Kits, Scholarships, and GBV programs.',
+  },
+  {
+    role: 'Member',
+    name: 'Philip Gana Malgwi',
+    description: 'Oversees strategy and represents the NGO publicly.',
+  },
+  {
+    role: 'Member',
+    name: 'Esther Zara Kanawa',
+    description: 'Maintains organizational records, meeting minutes, and CAC filings.',
   },
 ]
 
@@ -273,8 +273,7 @@ export const footer: FooterContent = {
     phone: '+234 817 884 8534',
     email: 'info@queenshavahsustainabledevelopmentinitiative.org',
     addressLines: [
-      'Plot 262 Odeh Adeka Street',
-      'Greencity Residences',
+      '262 Greencity Residences',
       'Karsana District, Gwarinpa',
       'Abuja, Nigeria',
     ],
