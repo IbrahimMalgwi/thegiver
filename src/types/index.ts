@@ -84,11 +84,20 @@ export interface GalleryItem {
   alt: string
 }
 
+export interface MemberSocials {
+  linkedin?: string
+  twitter?: string
+  email?: string
+}
+
 export interface LeaderRole {
   role: string
   name: string | null
   description?: string
   bio?: string
+  image?: string
+  organization?: string
+  socials?: MemberSocials
 }
 
 export interface TeamMember {
@@ -96,6 +105,9 @@ export interface TeamMember {
   name: string
   description?: string
   bio?: string
+  image?: string
+  organization?: string
+  socials?: MemberSocials
 }
 
 export interface FaqItem {

@@ -202,31 +202,44 @@ export const leadershipRoles: LeaderRole[] = [
     role: 'Executive Director / Founder',
     name: 'Ruth Elisha Shavah',
     description: 'Leads daily operations, programs, and organizational delivery.',
-    bio: 'Full biography coming soon.',
+    bio: 'Mrs. Ruth Elisha Shavah is a Chartered Accountant, Professional Tax Administrator, and Chartered Forensic Accountant and Investigator with extensive experience in financial management, governance, and development.\n' +
+        '\n' +
+        'As Chief Executive Officer of Queen Shavah Sustainable Development Initiative, she provides strategic leadership with a strong commitment to transparency, accountability, and sustainable impact. She has worked with reputable development organizations and has successfully managed several high-value projects, delivering results with excellence and integrity.\n' +
+        '\n' +
+        'Her expertise spans financial stewardship, risk management, tax administration, and forensic investigations. She applies these skills to ensure the prudent use of resources, strengthen institutional systems, and build trust with donors, partners, and communities.\n' +
+        '\n' +
+        'Mrs. Elisha is passionate about building organizations that deliver measurable results, uphold the highest ethical standards, and transform lives.\n' +
+        '\n' +
+        '_"Accountability is not just a principle. It is the foundation for lasting impact."',
+    image: '/board/Ruth.jpeg',
   },
   {
     role: 'Secretary',
     name: 'Aishah Olabisi Busari',
     description: 'Oversees documentary and information.',
     bio: 'Full biography coming soon.',
+    image: '/board/Aisha.jpeg',
   },
   {
     role: 'Board Chairman',
     name: 'Zakariah Bulus',
     description: 'Oversees Dignity Kits, Scholarships, and GBV programs.',
     bio: 'Full biography coming soon.',
+    image: '/board/Zakaria.jpg',
   },
   {
     role: 'Member',
     name: 'Philip Gana Malgwi',
     description: 'Oversees strategy and represents the NGO publicly.',
     bio: 'Full biography coming soon.',
+    image: '/board/Philip.jpg',
   },
   {
     role: 'Member',
     name: 'Esther Zara Kanawa',
     description: 'Maintains organizational records, meeting minutes, and CAC filings.',
     bio: 'Full biography coming soon.',
+    image: '/board/Esther.jpeg',
   },
 ]
 
@@ -241,60 +254,70 @@ export const teamMembers: TeamMember[] = [
     name: 'Grace Adeyemi',
     description: 'Coordinates the delivery of health and hygiene programs across partner communities.',
     bio: 'Grace coordinates the delivery of health and hygiene programs across partner communities, working closely with local health workers to ensure dignity kits and health education reach those who need them most.',
+    image: '/team/Grace.jpeg',
   },
   {
     role: 'Volunteer Coordinator',
     name: 'Daniel Okon',
     description: 'Recruits, trains, and manages volunteers supporting field activities.',
     bio: 'Daniel recruits, trains, and manages the volunteer network that supports outreach events, distributions, and community workshops throughout the year.',
+    image: '/team/Daniel.jpg',
   },
   {
     role: 'Communications & Media Officer',
     name: 'Blessing Nwachukwu',
     description: 'Manages storytelling, social media, and public communications.',
     bio: 'Blessing manages the organization’s storytelling, social media presence, and press communications, helping share the impact of our programs with the wider public.',
+    image: '/team/Blessing.jpeg',
   },
   {
     role: 'Finance & Administration Officer',
     name: 'Samuel Ibrahim',
     description: 'Oversees budgeting, bookkeeping, and day-to-day administration.',
     bio: 'Samuel oversees budgeting, bookkeeping, and day-to-day administration, ensuring donor funds and organizational resources are managed responsibly.',
+    image: '/team/Samuel.jpg',
   },
   {
     role: 'Monitoring & Evaluation Officer',
     name: 'Faith Danladi',
     description: 'Tracks program outcomes and impact data across all initiatives.',
     bio: 'Faith tracks program outcomes and impact data across all initiatives, building the reports that show donors and partners the real-world results of our work.',
+    image: '/team/Faith.jpeg',
   },
   {
     role: 'Community Outreach Officer',
     name: 'Emmanuel Yakubu',
     description: 'Builds relationships with community leaders and local partners.',
     bio: 'Emmanuel builds relationships with community leaders and local partners, identifying the households and groups most in need of support in each new location.',
+    image: '/team/Emmanuel.jpg',
   },
   {
     role: 'Education Programs Officer',
     name: 'Chiamaka Eze',
     description: 'Runs scholarship and tutoring initiatives for vulnerable children.',
     bio: 'Chiamaka runs our scholarship and tutoring initiatives, working with schools and families to keep vulnerable children engaged in their education.',
+    image: '/team/Chiamaka.jpeg',
   },
   {
     role: 'Field Operations Officer',
     name: 'Musa Abdullahi',
     description: 'Leads logistics for distributions, outreaches, and crisis response.',
     bio: 'Musa leads logistics for distributions, outreaches, and crisis response, making sure supplies and teams reach communities safely and on schedule.',
+    image: '/team/Musa.jpg',
   },
   {
     role: 'Partnerships & Grants Officer',
     name: 'Patience Okorie',
     description: 'Develops relationships with donors, sponsors, and partner organizations.',
     bio: 'Patience develops relationships with donors, sponsors, and partner organizations, and prepares proposals and reports that sustain our program funding.',
+    image: '/team/Patience.jpeg',
   },
   {
     role: 'IT & Data Support Officer',
     name: 'David Longtau',
     description: 'Maintains records systems and technical support for the team.',
     bio: 'David maintains our records systems and provides technical support for the team, keeping beneficiary and program data organized and secure.',
+    image: '/team/David.jpg',
   },
 ]
 
