@@ -91,6 +91,13 @@ export interface LeaderRole {
   bio?: string
 }
 
+export interface TeamMember {
+  role: string
+  name: string
+  description?: string
+  bio?: string
+}
+
 export interface FaqItem {
   q: string
   a: string

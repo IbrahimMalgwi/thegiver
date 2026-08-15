@@ -18,6 +18,7 @@ import type {
   LeaderRole,
   NavLink,
   Program,
+  TeamMember,
   TextSectionContent,
 } from '../types'
 
@@ -30,6 +31,7 @@ export const ORG_TAGLINE_SHORT = 'Dignity for All.'
 export const navLinks: NavLink[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
+  { label: 'Team', href: '/team' },
   { label: 'Programs', href: '#programs' },
   { label: 'Projects', href: '#projects' },
   { label: 'Events', href: '#events' },
@@ -225,6 +227,74 @@ export const leadershipRoles: LeaderRole[] = [
     name: 'Esther Zara Kanawa',
     description: 'Maintains organizational records, meeting minutes, and CAC filings.',
     bio: 'Full biography coming soon.',
+  },
+]
+
+export const teamIntro: TextSectionContent = {
+  headline: 'Our Team',
+  text: 'Meet the staff and volunteers who carry out our programs every day, from community outreach to field operations.',
+}
+
+export const teamMembers: TeamMember[] = [
+  {
+    role: 'Program Coordinator, Health & Hygiene',
+    name: 'Grace Adeyemi',
+    description: 'Coordinates the delivery of health and hygiene programs across partner communities.',
+    bio: 'Grace coordinates the delivery of health and hygiene programs across partner communities, working closely with local health workers to ensure dignity kits and health education reach those who need them most.',
+  },
+  {
+    role: 'Volunteer Coordinator',
+    name: 'Daniel Okon',
+    description: 'Recruits, trains, and manages volunteers supporting field activities.',
+    bio: 'Daniel recruits, trains, and manages the volunteer network that supports outreach events, distributions, and community workshops throughout the year.',
+  },
+  {
+    role: 'Communications & Media Officer',
+    name: 'Blessing Nwachukwu',
+    description: 'Manages storytelling, social media, and public communications.',
+    bio: 'Blessing manages the organization’s storytelling, social media presence, and press communications, helping share the impact of our programs with the wider public.',
+  },
+  {
+    role: 'Finance & Administration Officer',
+    name: 'Samuel Ibrahim',
+    description: 'Oversees budgeting, bookkeeping, and day-to-day administration.',
+    bio: 'Samuel oversees budgeting, bookkeeping, and day-to-day administration, ensuring donor funds and organizational resources are managed responsibly.',
+  },
+  {
+    role: 'Monitoring & Evaluation Officer',
+    name: 'Faith Danladi',
+    description: 'Tracks program outcomes and impact data across all initiatives.',
+    bio: 'Faith tracks program outcomes and impact data across all initiatives, building the reports that show donors and partners the real-world results of our work.',
+  },
+  {
+    role: 'Community Outreach Officer',
+    name: 'Emmanuel Yakubu',
+    description: 'Builds relationships with community leaders and local partners.',
+    bio: 'Emmanuel builds relationships with community leaders and local partners, identifying the households and groups most in need of support in each new location.',
+  },
+  {
+    role: 'Education Programs Officer',
+    name: 'Chiamaka Eze',
+    description: 'Runs scholarship and tutoring initiatives for vulnerable children.',
+    bio: 'Chiamaka runs our scholarship and tutoring initiatives, working with schools and families to keep vulnerable children engaged in their education.',
+  },
+  {
+    role: 'Field Operations Officer',
+    name: 'Musa Abdullahi',
+    description: 'Leads logistics for distributions, outreaches, and crisis response.',
+    bio: 'Musa leads logistics for distributions, outreaches, and crisis response, making sure supplies and teams reach communities safely and on schedule.',
+  },
+  {
+    role: 'Partnerships & Grants Officer',
+    name: 'Patience Okorie',
+    description: 'Develops relationships with donors, sponsors, and partner organizations.',
+    bio: 'Patience develops relationships with donors, sponsors, and partner organizations, and prepares proposals and reports that sustain our program funding.',
+  },
+  {
+    role: 'IT & Data Support Officer',
+    name: 'David Longtau',
+    description: 'Maintains records systems and technical support for the team.',
+    bio: 'David maintains our records systems and provides technical support for the team, keeping beneficiary and program data organized and secure.',
   },
 ]
 

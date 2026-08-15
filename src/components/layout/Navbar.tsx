@@ -1,8 +1,11 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import { footer, navLinks, uiText } from '../../data/content'
 import { DonateButton } from '../ui/DonateButton'
+
+const toRoute = (href: string) => (href.startsWith('#') ? `/${href}` : href)
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,8 +15,8 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/60 bg-surface-warm/80 shadow-md backdrop-blur-md">
       <nav className="container mx-auto flex items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <a
-          href="#home"
+        <Link
+          to="/"
           className="flex items-center gap-3"
           onClick={closeMenu}
           aria-label={`${footer.brand} — home`}
@@ -25,17 +28,17 @@ export function Navbar() {
               Sustainable Development Initiative
             </span>
           </span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-6 xl:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={toRoute(link.href)}
               className="text-sm font-semibold text-muted transition hover:text-brand-purple"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <DonateButton variant="nav" />
         </div>
@@ -55,14 +58,14 @@ export function Navbar() {
         <div className="border-t border-brand-purple/10 bg-surface-warm/95 px-4 pb-5 shadow-xl xl:hidden">
           <div className="container mx-auto grid gap-2 sm:px-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={toRoute(link.href)}
                 className="rounded-lg px-4 py-3 text-base font-semibold text-brand-purple transition hover:bg-surface-purple"
                 onClick={closeMenu}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <DonateButton variant="primary" className="mt-2 w-full" />
           </div>

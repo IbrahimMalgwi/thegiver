@@ -1,22 +1,15 @@
 import { ArrowUp } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { Footer } from './components/layout/Footer'
 import { Navbar } from './components/layout/Navbar'
-import { About } from './components/sections/About'
-import { Donate } from './components/sections/Donate'
-import { Events } from './components/sections/Events'
-import { FAQ } from './components/sections/FAQ'
-import { Flagship } from './components/sections/Flagship'
-import { Gallery } from './components/sections/Gallery'
-import { GetInvolved } from './components/sections/GetInvolved'
-import { Hero } from './components/sections/Hero'
-import { Intro } from './components/sections/Intro'
-import { Leadership } from './components/sections/Leadership'
-import { Programs } from './components/sections/Programs'
 import { uiText } from './data/content'
+import { Home } from './pages/Home'
+import { Team } from './pages/Team'
 
 function App() {
   const [showBackToTop, setShowBackToTop] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,32 +22,35 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (location.hash) {
+      const target = document.getElementById(location.hash.slice(1))
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } else {
+      window.scrollTo({ top: 0 })
+    }
+  }, [location.pathname, location.hash])
+
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
-        <Intro />
-        <About />
-        <Programs />
-        <Flagship />
-        <Events />
-        <Gallery />
-        <GetInvolved />
-        <Leadership />
-        <FAQ />
-        <Donate />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/team" element={<Team />} />
+        </Routes>
       </main>
       <Footer />
 
       {showBackToTop ? (
-        <a
-          href="#home"
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="fixed bottom-5 right-5 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-purple text-white shadow-xl transition hover:-translate-y-0.5"
           aria-label={uiText.backToTop}
         >
           <ArrowUp aria-hidden="true" size={22} />
-        </a>
+        </button>
       ) : null}
     </>
   )
