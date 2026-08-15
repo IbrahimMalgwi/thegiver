@@ -200,26 +200,31 @@ export const leadershipRoles: LeaderRole[] = [
     role: 'Executive Director / Founder',
     name: 'Ruth Elisha Shavah',
     description: 'Leads daily operations, programs, and organizational delivery.',
+    bio: 'Full biography coming soon.',
   },
   {
     role: 'Secretary',
     name: 'Aishah Olabisi Busari',
     description: 'Oversees documentary and information.',
+    bio: 'Full biography coming soon.',
   },
   {
     role: 'Board Chairman',
     name: 'Zakariah Bulus',
     description: 'Oversees Dignity Kits, Scholarships, and GBV programs.',
+    bio: 'Full biography coming soon.',
   },
   {
     role: 'Member',
     name: 'Philip Gana Malgwi',
     description: 'Oversees strategy and represents the NGO publicly.',
+    bio: 'Full biography coming soon.',
   },
   {
     role: 'Member',
     name: 'Esther Zara Kanawa',
     description: 'Maintains organizational records, meeting minutes, and CAC filings.',
+    bio: 'Full biography coming soon.',
   },
 ]
 

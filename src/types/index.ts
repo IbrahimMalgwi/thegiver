@@ -88,6 +88,7 @@ export interface LeaderRole {
   role: string
   name: string | null
   description?: string
+  bio?: string
 }
 
 export interface FaqItem {
