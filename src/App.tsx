@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import { Footer } from './components/layout/Footer'
 import { Navbar } from './components/layout/Navbar'
 import { uiText } from './data/content'
+import { GlobalEvents } from './pages/GlobalEvents'
 import { Home } from './pages/Home'
 import { Team } from './pages/Team'
 
@@ -38,6 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/global-events" element={<GlobalEvents />} />
         </Routes>
       </main>
       <Footer />

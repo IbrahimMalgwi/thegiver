@@ -25,6 +25,7 @@ import type {
 export const ORG_NAME = 'Queen Shavah Sustainable Development Initiative'
 export const ORG_NAME_FULL = 'QUEEN SHAVAH SUSTAINABLE DEVELOPMENT INITIATIVE'
 export const ORG_NAME_SHORT = 'Queen Shavah'
+export const ORG_NAME_ABBR = 'QSSDI'
 export const ORG_TAGLINE = 'Dignity for All. Giving Hands. Caring Hearts. No One Left Behind.'
 export const ORG_TAGLINE_SHORT = 'Dignity for All.'
 
@@ -35,6 +36,7 @@ export const navLinks: NavLink[] = [
   { label: 'Programs', href: '#programs' },
   { label: 'Projects', href: '#projects' },
   { label: 'Events', href: '#events' },
+  { label: 'Global Events', href: '/global-events' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Get Involved', href: '#get-involved' },
   { label: 'Contact', href: '#contact' },
@@ -217,7 +219,15 @@ export const leadershipRoles: LeaderRole[] = [
     role: 'Secretary',
     name: 'Aishah Olabisi Busari',
     description: 'Oversees documentary and information.',
-    bio: 'Full biography coming soon.',
+    bio: 'Aishah Busari is a Chartered Accountant turned Project Manager and Business Analyst with experience spanning financial management, NGO governance, project and program management, business analysis, organizational strategy, and operational improvement.\n' +
+        '\n' +
+        'As Secretary of the Queen Shavah Sustainable Development Initiative, she provides governance and administrative oversight, supports effective board coordination and documentation, and helps strengthen the systems, processes, and accountability structures required to advance the organization’s mission and ensure its long-term sustainability.\n' +
+        '\n' +
+        'Aishah has worked with reputable international non-governmental and development organizations, contributing to donor-funded programs and initiatives across multiple sectors. She brings over 10 years of combined professional experience in financial management, project coordination, stakeholder engagement, process improvement, compliance, reporting, and organizational operations.\n' +
+        '\n' +
+        'Her multidisciplinary background enables her to combine strong financial stewardship with structured project delivery and strategic problem-solving. She is passionate about creating lasting social impact, strengthening organizations, empowering communities, and supporting initiatives that improve lives and promote sustainable development.\n' +
+        '\n' +
+        'Through her role at Queen Shavah Sustainable Development Initiative, Aishah is committed to promoting good governance, accountability, collaboration, and sustainable solutions that create meaningful and measurable impact in the communities the organization serves.',
     image: '/board/Aisha.jpeg',
   },
   {
@@ -229,17 +239,36 @@ export const leadershipRoles: LeaderRole[] = [
   },
   {
     role: 'Member',
-    name: 'Philip Gana Malgwi',
+    name: 'Dr Philip Gana Malgwi, (PhD, CLN, MNLA, MCIHRM)',
     description: 'Oversees strategy and represents the NGO publicly.',
-    bio: 'Full biography coming soon.',
+    bio: 'Dr Philip Gana Malgwi is a Librarian, Lecturer, Researcher, Author, and Development Professional with professional experience spanning library and information science, programme management, human resources, organisational development, learning and development, and institutional capacity strengthening.\n' +
+        'He holds a PhD in Library and Information Science, with specialisation in Information Science, and is a Chartered Librarian in Nigeria (CLN), Member of the Nigerian Library Association (MNLA), and Member of the Chartered Institute of Human Resource Management (MCIHRM). He is currently a Lecturer, combining academic responsibilities with continued engagement in professional, organisational, and development-oriented initiatives.\n' +
+        'Dr Malgwi has previous experience working with both international and national organisations, where he contributed to programme implementation and organisational development, as well as human resources functions. His experience includes learning and development, staff training and capacity building, organisational capacity assessment, compliance, performance development, and strengthening institutional systems and processes.\n' +
+        'His professional expertise also encompasses library and information services, information management, research, scholarly communication, information literacy, digital technologies, knowledge management, and organisational capacity development. He brings an interdisciplinary perspective that connects information, people, systems, and organisational performance.\n' +
+        'As a Board Member, Dr Malgwi brings experience in strategic thinking, organisational development, human capital development, capacity strengthening, compliance, and professional leadership. He is committed to promoting good governance, accountability, ethical leadership, continuous learning, and sustainable organisational impact.\n' +
+        'He is passionate about strengthening organisations by developing people, improving systems, promoting knowledge-driven decision-making, and building institutional capacity for sustainable results.\n' +
+        '\n' +
+        '“Strong organisations are built when people, systems, knowledge, and accountability work together to create lasting impact.',
     image: '/board/Philip.jpg',
   },
   {
     role: 'Member',
     name: 'Esther Zara Kanawa',
     description: 'Maintains organizational records, meeting minutes, and CAC filings.',
-    bio: 'Full biography coming soon.',
-    image: '/board/Esther.jpeg',
+    bio: 'Esther Zara Kanawa\n' +
+        '\n' +
+        'Registered Nurse | Registered Midwife | Certified Registered Nurse Anaesthetist | B.NSc. Nursing\n' +
+        '\n' +
+        'Mrs. Esther Kanawa is a highly trained and dedicated healthcare professional with qualifications in Nursing, Midwifery, and Nurse Anaesthesia. She is committed to providing safe, compassionate, and quality healthcare while upholding the highest standards of professionalism and patient care.\n' +
+        '\n' +
+        'As a Registered Nurse, Registered Midwife, and Certified Registered Nurse Anaesthetist, she possesses a broad range of clinical expertise spanning general nursing care, maternal and child health, and anaesthetic management. Her professional training has equipped her with the knowledge and skills required to deliver effective patient-centred care in diverse healthcare settings.\n' +
+        '\n' +
+        'Esther holds a Bachelor of Nursing Science (B.NSc.) in Nursing, complementing her professional certifications and strengthening her capacity for evidence-based clinical practice, patient advocacy, and healthcare delivery.\n' +
+        '\n' +
+        'She is passionate about improving patient outcomes, promoting safe healthcare practices, and contributing meaningfully to the wellbeing of individuals, families, and communities.\n' +
+        '\n' +
+        '“Compassion in care, excellence in practice, and commitment to every life entrusted to me.”',
+    image: '/board/Esther.jpg',
   },
 ]
 
@@ -324,6 +353,11 @@ export const teamMembers: TeamMember[] = [
 export const eventsIntro: TextSectionContent = {
   headline: 'Events',
   text: 'Join us at our community initiatives, outreaches, and gatherings. Check back here for what is coming up next.',
+}
+
+export const globalEventsIntro: TextSectionContent = {
+  headline: 'Global Days We Celebrate',
+  text: 'International observance days give us a shared moment to spotlight the causes we work on year-round, from health and education to humanitarian response and youth empowerment.',
 }
 
 export const galleryIntro: TextSectionContent = {

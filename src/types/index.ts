@@ -67,6 +67,17 @@ export interface EventItem {
   status: 'upcoming' | 'past'
 }
 
+/** A recurring international/global observance day, e.g. World Humanitarian Day. */
+export interface GlobalEvent {
+  id: string
+  title: string
+  /** Month and day the observance falls on each year, formatted "MM-DD". */
+  monthDay: string
+  description: string
+  image: string | null
+}
+
+
 export type GalleryCategory =
   | 'Health & Hygiene'
   | 'Education'

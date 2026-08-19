@@ -1,4 +1,5 @@
 import { ChevronDown, ChevronUp } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { faqs } from '../../data/content'
 
@@ -27,7 +28,20 @@ export function FAQ() {
                     <ChevronDown aria-hidden="true" className="shrink-0" size={22} />
                   )}
                 </button>
-                {isOpen ? <p className="px-5 pb-5 leading-relaxed text-muted">{faq.a}</p> : null}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-5 pb-5 leading-relaxed text-muted">{faq.a}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             )
           })}
