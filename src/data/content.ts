@@ -239,7 +239,7 @@ export const leadershipRoles: LeaderRole[] = [
   },
   {
     role: 'Member',
-    name: 'Dr Philip Gana Malgwi, (PhD, CLN, MNLA, MCIHRM)',
+    name: 'Dr. Philip Gana Malgwi, (CLN, MNLA, MCIHRM)',
     description: 'Oversees strategy and represents the NGO publicly.',
     bio: 'Dr Philip Gana Malgwi is a Librarian, Lecturer, Researcher, Author, and Development Professional with professional experience spanning library and information science, programme management, human resources, organisational development, learning and development, and institutional capacity strengthening.\n' +
         'He holds a PhD in Library and Information Science, with specialisation in Information Science, and is a Chartered Librarian in Nigeria (CLN), Member of the Nigerian Library Association (MNLA), and Member of the Chartered Institute of Human Resource Management (MCIHRM). He is currently a Lecturer, combining academic responsibilities with continued engagement in professional, organisational, and development-oriented initiatives.\n' +
