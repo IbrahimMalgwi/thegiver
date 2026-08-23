@@ -34,8 +34,7 @@ export const navLinks: NavLink[] = [
   { label: 'About', href: '#about' },
   // { label: 'Team', href: '/team' }, // hidden per request — page still exists at /team
   { label: 'Programs', href: '#programs' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Events', href: '#events' },
+  { label: 'Projects & Events', href: '/projects-events' },
   { label: 'Global Events', href: '/global-events' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Get Involved', href: '#get-involved' },
@@ -353,6 +352,11 @@ export const teamMembers: TeamMember[] = [
 export const eventsIntro: TextSectionContent = {
   headline: 'Events',
   text: 'Join us at our community initiatives, outreaches, and gatherings. Check back here for what is coming up next.',
+}
+
+export const projectsEventsIntro: TextSectionContent = {
+  headline: 'Projects & Events',
+  text: 'A closer look at our flagship program and the community initiatives, outreaches, and gatherings that bring our work to life.',
 }
 
 export const globalEventsIntro: TextSectionContent = {
