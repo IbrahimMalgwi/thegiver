@@ -32,7 +32,7 @@ export const ORG_TAGLINE_SHORT = 'Dignity for All.'
 export const navLinks: NavLink[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Team', href: '/team' },
+  // { label: 'Team', href: '/team' }, // hidden per request — page still exists at /team
   { label: 'Programs', href: '#programs' },
   { label: 'Projects', href: '#projects' },
   { label: 'Events', href: '#events' },
@@ -235,7 +235,7 @@ export const leadershipRoles: LeaderRole[] = [
     name: 'Zakariah Bulus',
     description: 'Oversees Dignity Kits, Scholarships, and GBV programs.',
     bio: 'Full biography coming soon.',
-    image: '/board/Zakaria.jpg',
+    image: '/board/Zakaria.jpeg',
   },
   {
     role: 'Member',

@@ -6,7 +6,7 @@ import { Navbar } from './components/layout/Navbar'
 import { uiText } from './data/content'
 import { GlobalEvents } from './pages/GlobalEvents'
 import { Home } from './pages/Home'
-import { Team } from './pages/Team'
+// import { Team } from './pages/Team' // hidden per request — page still exists
 
 function App() {
   const [showBackToTop, setShowBackToTop] = useState(false)
@@ -38,7 +38,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/team" element={<Team />} />
+          {/* <Route path="/team" element={<Team />} /> hidden per request */}
           <Route path="/global-events" element={<GlobalEvents />} />
         </Routes>
       </main>
