@@ -15,8 +15,8 @@ export function Home() {
       <Intro />
       <About />
       <Programs />
-      <Gallery />
       <GetInvolved />
+      <Gallery />
       <Leadership />
       <FAQ />
       <Donate />

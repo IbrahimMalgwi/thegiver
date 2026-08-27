@@ -1,8 +1,9 @@
+import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { getDonationConfig } from '../../services/donationService'
 import { uiText } from '../../data/content'
+import { ctaVariantClasses, type CtaVariant } from './ctaVariants'
 
-type Variant = 'primary' | 'nav'
+type Variant = Extract<CtaVariant, 'primary' | 'nav' | 'accent' | 'outline'>
 
 interface DonateButtonProps {
   variant?: Variant
@@ -10,31 +11,20 @@ interface DonateButtonProps {
   className?: string
 }
 
-const variantClasses: Record<Variant, string> = {
-  primary:
-    'inline-flex min-h-12 items-center justify-center rounded-full bg-brand-gold px-7 py-3 text-base font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-brand-gold-dark',
-  nav: 'inline-flex items-center justify-center rounded-full bg-brand-gold px-5 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-gold-dark',
-}
-
 /**
- * Single entry point for the donate action across the site.
- *
- * Online payments are not connected yet, so this always routes to the on-page
- * donation section (#donate), which explains that giving is coming soon. When a
- * provider is wired into the donation service, only this component needs to open
- * the checkout flow instead — every call site stays the same.
+ * Single entry point for the donate action across the site — every call site
+ * routes here so the destination only needs to change in one place.
  */
 export function DonateButton({ variant = 'primary', label, className }: DonateButtonProps) {
-  const config = getDonationConfig()
   const text = label ?? uiText.donateCtaLabel
 
   return (
     <Link
-      to="/#donate"
-      className={`${variantClasses[variant]} ${className ?? ''}`.trim()}
-      aria-label={config.enabled ? text : `${text} — ${config.comingSoonMessage}`}
+      to="/donate"
+      className={`${ctaVariantClasses[variant]} ${className ?? ''}`.trim()}
     >
       {text}
+      {variant === 'accent' ? <ArrowRight aria-hidden="true" size={18} /> : null}
     </Link>
   )
 }

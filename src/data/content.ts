@@ -3,11 +3,18 @@ import {
   Droplets,
   GraduationCap,
   HandHeart,
+  Handshake,
+  Scale,
   ShieldCheck,
+  Sprout,
+  TrendingUp,
   Users,
+  Zap,
 } from 'lucide-react'
 import type {
   AboutContent,
+  BankTransferDetails,
+  CoreValue,
   DonateContent,
   DonationConfig,
   FaqItem,
@@ -20,14 +27,15 @@ import type {
   Program,
   TeamMember,
   TextSectionContent,
+  TrustStripContent,
 } from '../types'
 
 export const ORG_NAME = 'Queen Shavah Sustainable Development Initiative'
 export const ORG_NAME_FULL = 'QUEEN SHAVAH SUSTAINABLE DEVELOPMENT INITIATIVE'
 export const ORG_NAME_SHORT = 'Queen Shavah'
 export const ORG_NAME_ABBR = 'QSSDI'
-export const ORG_TAGLINE = 'Dignity for All. Giving Hands. Caring Hearts. No One Left Behind.'
-export const ORG_TAGLINE_SHORT = 'Dignity for All.'
+export const ORG_TAGLINE = 'Giving Dignity. Restoring Hope. Building Futures.'
+export const ORG_TAGLINE_SHORT = 'Giving Dignity.'
 
 export const navLinks: NavLink[] = [
   { label: 'Home', href: '#home' },
@@ -38,22 +46,26 @@ export const navLinks: NavLink[] = [
   { label: 'Global Events', href: '/global-events' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Get Involved', href: '#get-involved' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export const hero: HeroContent = {
-  headline: 'Dignity for All. Opportunity for Everyone.',
+  headline: ORG_TAGLINE,
   subhead:
     'Queen Shavah Sustainable Development Initiative is committed to empowering vulnerable individuals, families, and communities across Nigeria through health, education, protection, economic empowerment, and sustainable development.',
-  ctaPrimary: 'Support Our Mission',
-  ctaSecondary: 'Explore Our Programs',
+  ctaPrimary: 'Explore Our Impact',
+  ctaSecondary: 'Get Involved',
   caption: 'A Nigerian nonprofit for dignity, health, education & empowerment',
 }
 
-export const intro: TextSectionContent = {
-  headline: 'The hands that give. The heart that cares.',
-  text: 'Across Nigeria, too many people are held back by poverty, poor health, unsafe environments, and limited access to education and opportunity. We work alongside communities to change that — combining direct programs, advocacy, partnerships, and sustainable development so that dignity, safety, and opportunity are within reach for everyone, no matter their gender or circumstance.',
-}
+/**
+ * Copy for the trust-strip section that replaces the old image-heavy Intro —
+ * the `facts` are derived below (after `programs`/`leadershipRoles` exist) so
+ * the figures can never drift out of sync with the data they describe.
+ */
+export const introHeadline = 'The hands that give. The heart that cares.'
+export const introText =
+  'Across Nigeria, too many people are held back by poverty, poor health, unsafe environments, and limited access to education and opportunity. We work alongside communities to change that — combining direct programs, advocacy, partnerships, and sustainable development so that dignity, safety, and opportunity are within reach for everyone, no matter their gender or circumstance.'
 
 export const about: AboutContent = {
   eyebrow: 'About Us',
@@ -63,10 +75,46 @@ export const about: AboutContent = {
     'To be the hands that give and the heart that cares. We advance health, education, safety, livelihoods, and leadership for vulnerable persons through direct programs, advocacy, partnerships, and sustainable community development.',
   vision:
     'A Nigeria where every person lives with dignity, safety, education, and the opportunity to lead and thrive.',
-  founder: 'Ruth Elisha Shavah',
+  founder: 'Mrs. Ruth Elisha Shavah',
   founderCredentials: 'ACTI, ACA, FCCrFA',
   founderTitle: 'Founder & Executive Director',
+  founderBio:
+    "A women's rights, menstrual health, and human rights advocate, and a dedicated development worker. She is passionate about giving back to society, empowering women and girls, and ensuring that no one is left behind because of poverty.",
+  founderImage: '/board/Ruth.jpg',
 }
+
+export const coreValues: CoreValue[] = [
+  {
+    id: 'integrity',
+    title: 'Integrity',
+    icon: Handshake,
+    description: 'We act with honesty, transparency, and accountability in all we do.',
+  },
+  {
+    id: 'gender-equality-social-inclusion',
+    title: 'Gender Equality & Social Inclusion',
+    icon: Scale,
+    description: 'We ensure girls, women, and marginalized groups have equal access and voice.',
+  },
+  {
+    id: 'sustainability',
+    title: 'Sustainability',
+    icon: Sprout,
+    description: 'We design programs that create lasting impact beyond funding cycles.',
+  },
+  {
+    id: 'empowerment',
+    title: 'Empowerment',
+    icon: Zap,
+    description: 'We equip individuals and communities with tools to lead their own change.',
+  },
+  {
+    id: 'impact',
+    title: 'Impact',
+    icon: TrendingUp,
+    description: 'We measure success by the lives we transform and the results we deliver.',
+  },
+]
 
 export const programsIntro: TextSectionContent = {
   headline: 'Our Programs',
@@ -162,10 +210,15 @@ export const flagship: FlagshipContent = {
   highlights: [
     'Menstrual health hygiene for girls',
     'Practical health and hygiene education',
-    'Support Let\'s keep girls in school',
+    'Helping keep girls in school',
   ],
   note: 'Part of our Health & Hygiene program. We share updates from our activities as they happen.',
 }
+
+export const closingQuotes: string[] = [
+  'No girl should miss school because of her period.',
+  'No boy should be out of school because of no school fee.',
+]
 
 export const getInvolved: HowItWorksContent = {
   eyebrow: 'Get Involved',
@@ -177,18 +230,21 @@ export const getInvolved: HowItWorksContent = {
       title: 'Give',
       description:
         'Support our programs with a donation. Online giving is coming soon — reach out to us in the meantime to contribute.',
+      href: '/donate',
     },
     {
       step: 2,
       title: 'Volunteer',
       description:
         'Share your time and skills with our community initiatives, outreaches, and events across Nigeria.',
+      href: '/contact',
     },
     {
       step: 3,
       title: 'Partner',
       description:
         'Organizations, schools, and institutions can partner with us to expand our reach and deepen our impact.',
+      href: '/contact',
     },
   ],
 }
@@ -212,7 +268,7 @@ export const leadershipRoles: LeaderRole[] = [
         'Mrs. Elisha is passionate about building organizations that deliver measurable results, uphold the highest ethical standards, and transform lives.\n' +
         '\n' +
         '_"Accountability is not just a principle. It is the foundation for lasting impact."',
-    image: '/board/Ruth.jpeg',
+    image: '/board/Ruth.jpg',
   },
   {
     role: 'Secretary',
@@ -270,6 +326,17 @@ export const leadershipRoles: LeaderRole[] = [
     image: '/board/Esther.jpg',
   },
 ]
+
+export const trustStrip: TrustStripContent = {
+  headline: introHeadline,
+  text: introText,
+  facts: [
+    { value: String(programs.length), label: 'Connected Focus Areas' },
+    { value: 'Nationwide', label: 'Reach Across Nigeria' },
+    { value: String(leadershipRoles.length), label: 'Board & Leadership' },
+    { value: 'CAC-Registered', label: 'Nigerian Nonprofit' },
+  ],
+}
 
 export const teamIntro: TextSectionContent = {
   headline: 'Our Team',
@@ -369,6 +436,11 @@ export const galleryIntro: TextSectionContent = {
   text: 'Moments from our work across Nigeria — from health and hygiene to education, outreach, and empowerment. Photos from our activities will appear here.',
 }
 
+export const contactIntro: TextSectionContent = {
+  headline: 'Get in Touch',
+  text: 'Have a question, a partnership idea, or want to get involved? Reach us directly or send a message below and we will get back to you.',
+}
+
 export const faqs: FaqItem[] = [
   {
     q: 'What does Queen Shavah Sustainable Development Initiative do?',
@@ -401,6 +473,20 @@ export const donationConfig: DonationConfig = {
   comingSoonMessage: 'Online donations are coming soon.',
 }
 
+/**
+ * Bank transfer details shown on the Donate page's "Bank Transfer" path.
+ *
+ * PLACEHOLDER VALUES — swap these for the organization's real bank account
+ * details before launch. This is the single source of truth for these
+ * values; the Donate page reads from here rather than hardcoding them.
+ */
+export const bankTransferDetails: BankTransferDetails = {
+  accountName: 'Queen Shavah Sustainable Development', // placeholder
+  accountNumber: '0000000000', // placeholder
+  bankName: 'Placeholder Bank Name', // placeholder
+  reference: 'Please use your name as reference', // placeholder
+}
+
 export const footer: FooterContent = {
   brand: ORG_NAME,
   brandShort: ORG_NAME_SHORT,
@@ -416,9 +502,15 @@ export const footer: FooterContent = {
     founder: 'Ruth Elisha Shavah',
   },
   instagram: '@queenshavahinitiative',
-  instagramUrl: 'https://instagram.com/queenshavahinitiative',
+  instagramUrl: 'https://www.instagram.com/queenshavahinitiative/',
   facebook: 'Queen Shavah Initiative',
-  facebookUrl: 'https://facebook.com/queenshavahinitiative',
+  facebookUrl: 'https://www.facebook.com/profile.php?id=61593802530007',
+  youtube: '@queenshavahinitiative',
+  youtubeUrl: 'https://www.youtube.com/@queenshavahinitiative',
+  tiktok: '@queenshavahinitiative',
+  tiktokUrl: 'https://www.tiktok.com/@queenshavahinitiative',
+  twitter: '@queenshavahinit',
+  twitterUrl: 'https://x.com/queenshavahinit',
   year: 2026,
 }
 
@@ -427,7 +519,6 @@ export const uiText = {
   mobileMenuClose: 'Close menu',
   raisedLabel: 'Raised',
   goalLabel: 'Goal',
-  heroAlt: `${ORG_NAME_SHORT} community programs across Nigeria`,
   footerAboutHeading: 'About',
   footerContactHeading: 'Contact Info',
   footerSocialHeading: 'Follow Us',

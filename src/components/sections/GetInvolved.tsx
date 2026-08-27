@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { getInvolved } from '../../data/content'
+
+const MotionLink = motion.create(Link)
 
 export function GetInvolved() {
   return (
@@ -14,19 +17,20 @@ export function GetInvolved() {
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {getInvolved.steps.map((step) => (
-            <motion.article
+            <MotionLink
               key={step.step}
+              to={step.href}
               whileHover={{ y: -6 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              className="rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-xl"
+              className="block rounded-lg border border-transparent bg-white p-6 shadow-md transition-[box-shadow,border-color] hover:border-brand-purple/30 hover:shadow-xl focus-visible:border-brand-purple/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-purple text-lg font-extrabold text-white">
                 {step.step}
               </div>
               <h3 className="mt-5 text-xl font-bold tracking-normal text-brand-purple">{step.title}</h3>
               <p className="mt-3 leading-relaxed text-muted">{step.description}</p>
-            </motion.article>
+            </MotionLink>
           ))}
         </div>
       </div>

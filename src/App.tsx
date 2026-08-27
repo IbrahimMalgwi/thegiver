@@ -4,6 +4,8 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import { Footer } from './components/layout/Footer'
 import { Navbar } from './components/layout/Navbar'
 import { uiText } from './data/content'
+import { Contact } from './pages/Contact'
+import { Donate } from './pages/Donate'
 import { GlobalEvents } from './pages/GlobalEvents'
 import { Home } from './pages/Home'
 import { ProjectsEvents } from './pages/ProjectsEvents'
@@ -41,7 +43,9 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* <Route path="/team" element={<Team />} /> hidden per request */}
           <Route path="/projects-events" element={<ProjectsEvents />} />
+          <Route path="/donate" element={<Donate />} />
           <Route path="/global-events" element={<GlobalEvents />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

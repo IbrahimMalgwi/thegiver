@@ -1,5 +1,5 @@
 import { CheckCircle2, Sparkles } from 'lucide-react'
-import { flagship } from '../../data/content'
+import { closingQuotes, flagship } from '../../data/content'
 import { DonateButton } from '../ui/DonateButton'
 
 export function Flagship() {
@@ -28,6 +28,9 @@ export function Flagship() {
           <div className="rounded-lg bg-brand-purple p-8 text-white shadow-xl">
             <h3 className="text-2xl font-extrabold tracking-normal text-brand-gold">Stand for dignity</h3>
             <p className="mt-4 leading-relaxed text-white/85">{flagship.note}</p>
+            <p className="mt-6 border-l-4 border-brand-gold pl-4 text-lg font-semibold italic text-white">
+              “{closingQuotes[0]}”
+            </p>
             <DonateButton
               variant="primary"
               label="Support This Program"

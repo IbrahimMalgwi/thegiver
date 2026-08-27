@@ -18,6 +18,16 @@ export interface TextSectionContent {
   text: string
 }
 
+/** A single figure in the trust strip, e.g. { value: '6', label: 'Focus Areas' }. */
+export interface TrustFact {
+  value: string
+  label: string
+}
+
+export interface TrustStripContent extends TextSectionContent {
+  facts: TrustFact[]
+}
+
 export interface AboutContent extends TextSectionContent {
   eyebrow: string
   mission: string
@@ -25,6 +35,16 @@ export interface AboutContent extends TextSectionContent {
   founder: string
   founderTitle: string
   founderCredentials: string
+  founderBio: string
+  founderImage: string
+}
+
+/** A core value shown as a card. Icons come from lucide-react. */
+export interface CoreValue {
+  id: string
+  title: string
+  icon: LucideIcon
+  description: string
 }
 
 /** A focus area / program shown as a card. Icons come from lucide-react. */
@@ -46,6 +66,7 @@ export interface HowItWorksStep {
   step: number
   title: string
   description: string
+  href: string
 }
 
 export interface HowItWorksContent {
@@ -144,6 +165,14 @@ export interface DonationConfig {
   comingSoonMessage: string
 }
 
+/** Bank account details shown on the offline/bank-transfer giving path. */
+export interface BankTransferDetails {
+  accountName: string
+  accountNumber: string
+  bankName: string
+  reference: string
+}
+
 export interface ContactContent {
   phone: string
   email: string
@@ -160,5 +189,11 @@ export interface FooterContent {
   instagramUrl: string
   facebook: string
   facebookUrl: string
+  youtube: string
+  youtubeUrl: string
+  tiktok: string
+  tiktokUrl: string
+  twitter: string
+  twitterUrl: string
   year: number
 }

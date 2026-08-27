@@ -6,7 +6,7 @@ export function Leadership() {
   const [flippedIndex, setFlippedIndex] = useState<number | null>(null)
 
   return (
-    <section id="leadership" className="bg-surface-warm py-20">
+    <section id="leadership" className="bg-surface-purple py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-normal text-brand-purple sm:text-4xl">{leadershipIntro.headline}</h2>

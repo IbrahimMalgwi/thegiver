@@ -1,4 +1,5 @@
 import { Clock, HeartHandshake } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { donate } from '../../data/content'
 import { getDonationConfig } from '../../services/donationService'
 
@@ -23,12 +24,12 @@ export function Donate() {
         ) : null}
 
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand-gold px-7 py-3 font-bold text-white shadow-xl transition hover:bg-brand-gold-dark"
           >
             {donate.ctaPrimary}
-          </a>
+          </Link>
           <a
             href="#programs"
             className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/25 px-7 py-3 font-bold text-white transition hover:bg-white/10"

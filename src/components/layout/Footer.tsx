@@ -1,11 +1,22 @@
-import { Facebook, Instagram, Mail, MapPin, Phone, UserRound } from 'lucide-react'
-import { footer, uiText } from '../../data/content'
+import { Facebook, Instagram, Mail, MapPin, Phone, UserRound, X, Youtube } from 'lucide-react'
+import { closingQuotes, footer, uiText } from '../../data/content'
+import { TikTokIcon } from '../ui/TikTokIcon'
 
 export function Footer() {
   const phoneHref = `tel:${footer.contact.phone.replaceAll(' ', '')}`
 
   return (
-    <footer id="contact" className="bg-brand-purple text-white">
+    <footer className="bg-brand-purple text-white">
+      <div className="border-b border-white/15">
+        <div className="container mx-auto grid gap-3 px-4 py-8 text-center sm:px-6 lg:px-8">
+          {closingQuotes.map((quote) => (
+            <p key={quote} className="text-lg font-semibold italic text-brand-gold sm:text-xl">
+              “{quote}”
+            </p>
+          ))}
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -68,6 +79,33 @@ export function Footer() {
               >
                 <Facebook aria-hidden="true" size={18} />
                 {footer.facebook}
+              </a>
+              <a
+                className="inline-flex items-center gap-3 transition hover:text-brand-gold"
+                href={footer.youtubeUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Youtube aria-hidden="true" size={18} />
+                {footer.youtube}
+              </a>
+              <a
+                className="inline-flex items-center gap-3 transition hover:text-brand-gold"
+                href={footer.tiktokUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TikTokIcon aria-hidden={true} size={18} />
+                {footer.tiktok}
+              </a>
+              <a
+                className="inline-flex items-center gap-3 transition hover:text-brand-gold"
+                href={footer.twitterUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <X aria-hidden="true" size={18} />
+                {footer.twitter}
               </a>
             </div>
           </div>
