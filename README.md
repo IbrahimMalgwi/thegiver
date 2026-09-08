@@ -93,7 +93,7 @@ the-giver/
 
 - **Email:** info@queenshavahsustainabledevelopmentinitiative.org
 - **Phone:** +234 817 884 8534
-- **Address:** House No 262 Odeh Adeka Street, Greencity Residences, Karsana District, Gwarinpa, Abuja, Nigeria
+- **Address:** Greencity Residences, Karsana District, Gwarinpa, Abuja, Nigeria
 
 ---
 

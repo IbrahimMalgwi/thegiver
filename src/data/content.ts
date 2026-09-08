@@ -500,7 +500,7 @@ export const footer: FooterContent = {
     phone: '+234 817 884 8534',
     email: 'info@queenshavahsustainabledevelopmentinitiative.org',
     addressLines: [
-      '262 Greencity Residences',
+      'Greencity Residences',
       'Karsana District, Gwarinpa',
       'Abuja, Nigeria',
     ],
