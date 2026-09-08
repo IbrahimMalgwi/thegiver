@@ -23,6 +23,7 @@ export function Leadership() {
               organization={ORG_NAME_ABBR}
               bio={leader.bio ?? leader.description ?? ''}
               socials={leader.socials}
+              hideOverlay={leader.hideOverlay}
               isFlipped={flippedIndex === index}
               onHoverFlip={(flip) =>
                 setFlippedIndex((prev) => {

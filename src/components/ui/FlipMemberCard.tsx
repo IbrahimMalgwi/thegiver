@@ -10,6 +10,8 @@ export interface FlipMemberCardProps {
   organization?: string;
   bio: string;
   socials?: MemberSocials;
+  /** Skip the name/role/org text overlay on the front face — use when `photo` is a branded image that already shows this info. */
+  hideOverlay?: boolean;
   /** Whether this card is the one flipped open. Flip state is owned by the parent grid so only one card is open at a time. */
   isFlipped: boolean;
   /** Desktop hover intent — `true` on hover start, `false` on hover end. */
@@ -32,6 +34,7 @@ export const FlipMemberCard = memo(function FlipMemberCard({
                                                              organization,
                                                              bio,
                                                              socials,
+                                                             hideOverlay,
                                                              isFlipped,
                                                              onHoverFlip,
                                                              onTapToggle,
@@ -156,15 +159,17 @@ export const FlipMemberCard = memo(function FlipMemberCard({
                   <UserRound aria-hidden="true" size={64} className="text-brand-purple/30" />
                 </div>
             )}
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent p-4 pt-14">
-              <h3 className="text-lg font-extrabold leading-tight text-white">{name}</h3>
-              <p className="mt-0.5 text-sm font-semibold uppercase tracking-normal text-brand-gold">
-                {role}
-              </p>
-              {organization && (
-                  <p className="mt-0.5 text-xs text-white/70">{organization}</p>
-              )}
-            </div>
+            {!hideOverlay && (
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent p-4 pt-14">
+                  <h3 className="text-lg font-extrabold leading-tight text-white">{name}</h3>
+                  <p className="mt-0.5 text-sm font-semibold uppercase tracking-normal text-brand-gold">
+                    {role}
+                  </p>
+                  {organization && (
+                      <p className="mt-0.5 text-xs text-white/70">{organization}</p>
+                  )}
+                </div>
+            )}
 
             {/* Touch-only affordance */}
             {!hoverCapable && (

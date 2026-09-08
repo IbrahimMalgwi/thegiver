@@ -130,6 +130,8 @@ export interface LeaderRole {
   image?: string
   organization?: string
   socials?: MemberSocials
+  /** Set when `image` is a branded photo that already shows the name/role/org, so the card should skip the text overlay on the front face. */
+  hideOverlay?: boolean
 }
 
 export interface TeamMember {

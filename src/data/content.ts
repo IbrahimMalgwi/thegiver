@@ -268,7 +268,8 @@ export const leadershipRoles: LeaderRole[] = [
         'Mrs. Elisha is passionate about building organizations that deliver measurable results, uphold the highest ethical standards, and transform lives.\n' +
         '\n' +
         '_"Accountability is not just a principle. It is the foundation for lasting impact."',
-    image: '/board/Ruth.jpg',
+    image: '/board/Ruth.jpeg',
+    hideOverlay: true,
   },
   {
     role: 'Secretary',
@@ -283,7 +284,8 @@ export const leadershipRoles: LeaderRole[] = [
         'Her multidisciplinary background enables her to combine strong financial stewardship with structured project delivery and strategic problem-solving. She is passionate about creating lasting social impact, strengthening organizations, empowering communities, and supporting initiatives that improve lives and promote sustainable development.\n' +
         '\n' +
         'Through her role at Queen Shavah Sustainable Development Initiative, Aishah is committed to promoting good governance, accountability, collaboration, and sustainable solutions that create meaningful and measurable impact in the communities the organization serves.',
-    image: '/board/Aisha.jpeg',
+    image: '/board/Aisha.png',
+    hideOverlay: true,
   },
   {
     role: 'Board Chairman',
@@ -291,6 +293,7 @@ export const leadershipRoles: LeaderRole[] = [
     description: 'Oversees Dignity Kits, Scholarships, and GBV programs.',
     bio: 'Full biography coming soon.',
     image: '/board/Zakaria.jpeg',
+    hideOverlay: true,
   },
   {
     role: 'Member',
@@ -304,7 +307,8 @@ export const leadershipRoles: LeaderRole[] = [
         'He is passionate about strengthening organisations by developing people, improving systems, promoting knowledge-driven decision-making, and building institutional capacity for sustainable results.\n' +
         '\n' +
         '“Strong organisations are built when people, systems, knowledge, and accountability work together to create lasting impact.',
-    image: '/board/Philip.jpg',
+    image: '/board/Philip.png',
+    hideOverlay: true,
   },
   {
     role: 'Member',
@@ -323,7 +327,8 @@ export const leadershipRoles: LeaderRole[] = [
         'She is passionate about improving patient outcomes, promoting safe healthcare practices, and contributing meaningfully to the wellbeing of individuals, families, and communities.\n' +
         '\n' +
         '“Compassion in care, excellence in practice, and commitment to every life entrusted to me.”',
-    image: '/board/Esther.jpg',
+    image: '/board/Esther.png',
+    hideOverlay: true,
   },
 ]
 
