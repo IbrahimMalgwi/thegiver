@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useId, memo, type KeyboardEvent } from 'react';
+import { useEffect, useState, useCallback, useId, useRef, memo } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Info, Linkedin, Mail, Twitter, UserRound, X } from 'lucide-react';
 import type { MemberSocials } from '../../types';
@@ -46,6 +46,16 @@ export const FlipMemberCard = memo(function FlipMemberCard({
   const [photoFailed, setPhotoFailed] = useState(false);
   const shouldReduceMotion = useReducedMotion();
   const id = useId();
+  const cardRef = useRef<HTMLDivElement>(null);
+  const openRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const hiddenControl = isFlipped ? openRef.current : closeRef.current;
+    if (document.activeElement === hiddenControl) {
+      (isFlipped ? closeRef.current : openRef.current)?.focus();
+    }
+  }, [isFlipped]);
 
   // Reset photoFailed when photo src changes
   useEffect(() => {
@@ -61,28 +71,12 @@ export const FlipMemberCard = memo(function FlipMemberCard({
     return () => mql.removeEventListener('change', onChange);
   }, []);
 
-  const handleKeyDown = useCallback(
-      (event: KeyboardEvent<HTMLDivElement>) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          onTapToggle();
-        }
-      },
-      [onTapToggle]
-  );
-
-  const handleClick = useCallback(() => {
-    // Always allow click to toggle, even on hover‑capable devices,
-    // so users can “pin” the card open to read long bios.
-    onTapToggle();
-  }, [onTapToggle]);
-
   const handleHoverStart = useCallback(() => {
     if (hoverCapable) onHoverFlip(true);
   }, [hoverCapable, onHoverFlip]);
 
   const handleHoverEnd = useCallback(() => {
-    if (hoverCapable) onHoverFlip(false);
+    if (hoverCapable && !cardRef.current?.contains(document.activeElement)) onHoverFlip(false);
   }, [hoverCapable, onHoverFlip]);
 
   const hasSocials = socials && (socials.linkedin || socials.twitter || socials.email);
@@ -94,6 +88,7 @@ export const FlipMemberCard = memo(function FlipMemberCard({
 
   return (
       <div
+          ref={cardRef}
           className="group relative h-80 w-full"
           style={{ perspective: '1000px' }}
           // Attach a data attribute for reduced motion to control glow ring
@@ -122,16 +117,9 @@ export const FlipMemberCard = memo(function FlipMemberCard({
 
         {/* Flip container */}
         <motion.div
-            role="button"
-            tabIndex={0}
-            aria-expanded={isFlipped}
-            aria-label={ariaLabel}
-            aria-describedby={`${id}-bio`} // references the bio paragraph on the back
-            onClick={handleClick}
-            onKeyDown={handleKeyDown}
             onHoverStart={handleHoverStart}
             onHoverEnd={handleHoverEnd}
-            className="absolute inset-[3px] cursor-pointer rounded-lg shadow-md outline-none will-change-transform focus-visible:ring-4 focus-visible:ring-brand-gold/60"
+            className="absolute inset-[3px] rounded-lg shadow-md will-change-transform"
             style={{ transformStyle: 'preserve-3d' }}
             animate={shouldReduceMotion ? { opacity: 1 } : { rotateY: isFlipped ? 180 : 0 }}
             transition={{ duration: shouldReduceMotion ? 0.3 : 0.8, ease: 'easeInOut' }}
@@ -145,6 +133,7 @@ export const FlipMemberCard = memo(function FlipMemberCard({
                     : { backfaceVisibility: 'hidden' }
               }
               aria-hidden={isFlipped}
+              inert={isFlipped}
           >
             {photo && !photoFailed ? (
                 <img
@@ -178,6 +167,15 @@ export const FlipMemberCard = memo(function FlipMemberCard({
               Tap to read bio
             </span>
             )}
+            <button
+                ref={openRef}
+                type="button"
+                onClick={onTapToggle}
+                aria-label={ariaLabel}
+                aria-expanded={isFlipped}
+                aria-controls={`${id}-back`}
+                className="absolute inset-0 cursor-pointer rounded-lg focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-brand-gold"
+            />
           </div>
 
           {/* -------- BACK FACE -------- */}
@@ -188,7 +186,9 @@ export const FlipMemberCard = memo(function FlipMemberCard({
                     ? { opacity: isFlipped ? 1 : 0, transition: 'opacity 0.2s' }
                     : { backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }
               }
+              id={`${id}-back`}
               aria-hidden={!isFlipped}
+              inert={!isFlipped}
           >
             <div className="flex items-start justify-between">
               <div>
@@ -199,10 +199,9 @@ export const FlipMemberCard = memo(function FlipMemberCard({
               </div>
               {/* Close button – always visible when back is shown */}
               <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onTapToggle();
-                  }}
+                  ref={closeRef}
+                  type="button"
+                  onClick={onTapToggle}
                   aria-label="Close biography"
                   className="rounded-full p-1 text-white/60 transition hover:bg-white/10 hover:text-white"
               >

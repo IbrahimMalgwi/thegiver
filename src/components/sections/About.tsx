@@ -68,26 +68,28 @@ export function About() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-4xl">
-          <h3 className="text-center text-2xl font-extrabold uppercase tracking-normal text-brand-purple sm:text-3xl">
-            Meet the Founder
-          </h3>
+        {about.showFounder && (
+          <div className="mx-auto mt-16 max-w-4xl">
+            <h3 className="text-center text-2xl font-extrabold uppercase tracking-normal text-brand-purple sm:text-3xl">
+              Meet the Founder
+            </h3>
 
-          <div className="mt-8 flex flex-col items-center gap-8 rounded-lg bg-white p-8 shadow-md sm:flex-row sm:items-start sm:text-left">
-            <img
-              src={about.founderImage}
-              alt={about.founder}
-              className="h-32 w-32 shrink-0 rounded-full object-cover ring-4 ring-brand-purple/10"
-            />
+            <div className="mt-8 flex flex-col items-center gap-8 rounded-lg bg-white p-8 shadow-md sm:flex-row sm:items-start sm:text-left">
+              <img
+                src={about.founderImage}
+                alt={about.founder}
+                className="h-32 w-32 shrink-0 rounded-full object-cover ring-4 ring-brand-purple/10"
+              />
 
-            <div className="text-center sm:text-left">
-              <p className="text-2xl font-extrabold tracking-normal text-brand-purple">{about.founder}</p>
-              <p className="mt-1 text-sm font-bold uppercase tracking-wide text-brand-green">{about.founderTitle}</p>
-              <p className="mt-1 text-sm font-medium tracking-wide text-brand-purple/60">{about.founderCredentials}</p>
-              <p className="mt-4 leading-relaxed text-muted">{about.founderBio}</p>
+              <div className="text-center sm:text-left">
+                <p className="text-2xl font-extrabold tracking-normal text-brand-purple">{about.founder}</p>
+                <p className="mt-1 text-sm font-bold uppercase tracking-wide text-brand-green">{about.founderTitle}</p>
+                <p className="mt-1 text-sm font-medium tracking-wide text-brand-purple/60">{about.founderCredentials}</p>
+                <p className="mt-4 leading-relaxed text-muted">{about.founderBio}</p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   )

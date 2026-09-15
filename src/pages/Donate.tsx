@@ -18,7 +18,7 @@ export function Donate() {
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl font-extrabold tracking-normal text-brand-purple sm:text-4xl">Ways to Give</h1>
           <p className="mt-5 text-lg leading-relaxed text-muted">
-            Choose the path that works best for you — partner with us directly, or give via bank transfer.
+            Support our work through a donation or a partnership. Contact our team to get started.
           </p>
         </div>
 
@@ -45,15 +45,24 @@ export function Donate() {
               <Building2 aria-hidden="true" size={24} />
             </div>
             <h2 className="mt-5 text-xl font-bold tracking-normal text-brand-purple">Donate via Bank Transfer</h2>
-            <p className="mt-3 leading-relaxed text-muted">
-              Prefer to give directly? Use the account details below to send your donation.
-            </p>
-            <dl className="mt-5 grid gap-3 border-t border-brand-green/15 pt-5 text-sm">
-              <BankDetailRow label="Account Name" value={bankTransferDetails.accountName} />
-              <BankDetailRow label="Account Number" value={bankTransferDetails.accountNumber} />
-              <BankDetailRow label="Bank Name" value={bankTransferDetails.bankName} />
-              <BankDetailRow label="Reference" value={bankTransferDetails.reference} />
-            </dl>
+            {bankTransferDetails ? (
+              <>
+                <p className="mt-3 leading-relaxed text-muted">
+                  Prefer to give directly? Use the account details below to send your donation.
+                </p>
+                <dl className="mt-5 grid gap-3 border-t border-brand-green/15 pt-5 text-sm">
+                  <BankDetailRow label="Account Name" value={bankTransferDetails.accountName} />
+                  <BankDetailRow label="Account Number" value={bankTransferDetails.accountNumber} />
+                  <BankDetailRow label="Bank Name" value={bankTransferDetails.bankName} />
+                  <BankDetailRow label="Reference" value={bankTransferDetails.reference} />
+                </dl>
+              </>
+            ) : (
+              <>
+                <p className="mt-3 leading-relaxed text-muted">Please contact our team for bank transfer details and help with your donation.</p>
+                <Link to="/contact" className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-purple px-7 py-3 font-bold text-white hover:bg-brand-purple-dark">Contact Us to Give</Link>
+              </>
+            )}
           </div>
         </div>
       </div>

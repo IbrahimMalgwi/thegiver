@@ -67,7 +67,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <DonateButton variant="primary" className="mt-2 w-full" />
+            <DonateButton variant="primary" className="mt-2 w-full" onClick={closeMenu} />
           </div>
         </div>
       ) : null}

@@ -29,6 +29,7 @@ export interface TrustStripContent extends TextSectionContent {
 }
 
 export interface AboutContent extends TextSectionContent {
+  showFounder: boolean
   eyebrow: string
   mission: string
   vision: string

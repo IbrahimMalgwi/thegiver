@@ -138,7 +138,7 @@ export function Contact() {
             <div className="flex flex-wrap items-center gap-4">
               <button
                 type="submit"
-                className="inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-full bg-brand-gold px-7 py-3 text-base font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-brand-gold-dark"
+                className="inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-full bg-brand-gold px-7 py-3 text-base font-bold text-ink shadow-xl transition hover:-translate-y-0.5 hover:bg-brand-gold-dark"
               >
                 Send Message
                 <Send aria-hidden="true" size={18} />

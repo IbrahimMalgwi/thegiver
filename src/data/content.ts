@@ -68,6 +68,7 @@ export const introText =
   'Across Nigeria, too many people are held back by poverty, poor health, unsafe environments, and limited access to education and opportunity. We work alongside communities to change that — combining direct programs, advocacy, partnerships, and sustainable development so that dignity, safety, and opportunity are within reach for everyone, no matter their gender or circumstance.'
 
 export const about: AboutContent = {
+  showFounder: false,
   eyebrow: 'About Us',
   headline: 'Empowering people and communities across Nigeria',
   text: 'Queen Shavah Sustainable Development Initiative is a Nigerian nonprofit organization committed to empowering individuals, families, and communities across Nigeria. We believe that dignity, education, safety, health, and opportunity should not depend on gender, poverty, or circumstance.',
@@ -259,7 +260,7 @@ export const leadershipRoles: LeaderRole[] = [
     role: 'Executive Director / Founder',
     name: 'Ruth Elisha Shavah',
     description: 'Leads daily operations, programs, and organizational delivery.',
-    bio: 'Mrs. Ruth Elisha Shavah is a Chartered Accountant, Professional Tax Administrator, and Chartered Forensic Accountant and Investigator with extensive experience in financial management, governance, and development.\n' +
+    bio: 'A women\'s rights, menstrual health, and human rights advocate, and a dedicated development worker. She is passionate about giving back to society, empowering women and girls, and ensuring that no one is left behind because of poverty.\n' +
         '\n' +
         'As Chief Executive Officer of Queen Shavah Sustainable Development Initiative, she provides strategic leadership with a strong commitment to transparency, accountability, and sustainable impact. She has worked with reputable development organizations and has successfully managed several high-value projects, delivering results with excellence and integrity.\n' +
         '\n' +
@@ -268,7 +269,15 @@ export const leadershipRoles: LeaderRole[] = [
         'Mrs. Elisha is passionate about building organizations that deliver measurable results, uphold the highest ethical standards, and transform lives.\n' +
         '\n' +
         '_"Accountability is not just a principle. It is the foundation for lasting impact."',
-    image: '/board/Ruth.jpeg',
+    image: '/board/Ruth.png',
+    hideOverlay: true,
+  },
+  {
+    role: 'Board Chairman',
+    name: 'Zakariah Bulus',
+    description: 'Oversees Dignity Kits, Scholarships, and GBV programs.',
+    bio: 'Full biography coming soon.',
+    image: '/board/Zakaria.png',
     hideOverlay: true,
   },
   {
@@ -284,15 +293,7 @@ export const leadershipRoles: LeaderRole[] = [
         'Her multidisciplinary background enables her to combine strong financial stewardship with structured project delivery and strategic problem-solving. She is passionate about creating lasting social impact, strengthening organizations, empowering communities, and supporting initiatives that improve lives and promote sustainable development.\n' +
         '\n' +
         'Through her role at Queen Shavah Sustainable Development Initiative, Aishah is committed to promoting good governance, accountability, collaboration, and sustainable solutions that create meaningful and measurable impact in the communities the organization serves.',
-    image: '/board/Aisha.png',
-    hideOverlay: true,
-  },
-  {
-    role: 'Board Chairman',
-    name: 'Zakariah Bulus',
-    description: 'Oversees Dignity Kits, Scholarships, and GBV programs.',
-    bio: 'Full biography coming soon.',
-    image: '/board/Zakaria.jpeg',
+    image: '/board/Aisha.webp',
     hideOverlay: true,
   },
   {
@@ -307,7 +308,7 @@ export const leadershipRoles: LeaderRole[] = [
         'He is passionate about strengthening organisations by developing people, improving systems, promoting knowledge-driven decision-making, and building institutional capacity for sustainable results.\n' +
         '\n' +
         '“Strong organisations are built when people, systems, knowledge, and accountability work together to create lasting impact.',
-    image: '/board/Philip.png',
+    image: '/board/Philip.webp',
     hideOverlay: true,
   },
   {
@@ -327,7 +328,7 @@ export const leadershipRoles: LeaderRole[] = [
         'She is passionate about improving patient outcomes, promoting safe healthcare practices, and contributing meaningfully to the wellbeing of individuals, families, and communities.\n' +
         '\n' +
         '“Compassion in care, excellence in practice, and commitment to every life entrusted to me.”',
-    image: '/board/Esther.png',
+    image: '/board/Esther.webp',
     hideOverlay: true,
   },
 ]
@@ -479,18 +480,10 @@ export const donationConfig: DonationConfig = {
 }
 
 /**
- * Bank transfer details shown on the Donate page's "Bank Transfer" path.
- *
- * PLACEHOLDER VALUES — swap these for the organization's real bank account
- * details before launch. This is the single source of truth for these
- * values; the Donate page reads from here rather than hardcoding them.
+ * Keep bank transfers unavailable until the organization supplies verified details.
+ * Set this to a BankTransferDetails object when those details are ready to publish.
  */
-export const bankTransferDetails: BankTransferDetails = {
-  accountName: 'Queen Shavah Sustainable Development', // placeholder
-  accountNumber: '0000000000', // placeholder
-  bankName: 'Placeholder Bank Name', // placeholder
-  reference: 'Please use your name as reference', // placeholder
-}
+export const bankTransferDetails: BankTransferDetails | null = null
 
 export const footer: FooterContent = {
   brand: ORG_NAME,

@@ -9,6 +9,7 @@ import { Donate } from './pages/Donate'
 import { GlobalEvents } from './pages/GlobalEvents'
 import { Home } from './pages/Home'
 import { ProjectsEvents } from './pages/ProjectsEvents'
+import { NotFound } from './pages/NotFound'
 // import { Team } from './pages/Team' // hidden per request — page still exists
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path="/donate" element={<Donate />} />
           <Route path="/global-events" element={<GlobalEvents />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
