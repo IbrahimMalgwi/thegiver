@@ -52,7 +52,7 @@ export const navLinks: NavLink[] = [
 export const hero: HeroContent = {
   headline: ORG_TAGLINE,
   subhead:
-    'Queen Shavah Sustainable Development Initiative is committed to empowering vulnerable individuals, families, and communities across Nigeria through health, education, protection, economic empowerment, and sustainable development.',
+    'Queen Shavah Sustainable Development Initiative is committed to empowering women and girls, vulnerable individuals, families, and communities across Nigeria through health, education, protection, economic empowerment, and sustainable development.',
   ctaPrimary: 'Explore Our Impact',
   ctaSecondary: 'Get Involved',
   caption: 'A Nigerian nonprofit for dignity, health, education & empowerment',

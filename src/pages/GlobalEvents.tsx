@@ -11,7 +11,7 @@ function GlobalEventCard({ event }: { event: GlobalEvent }) {
       whileHover={{ y: -6 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className="flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl"
+      className="flex w-full flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
     >
       <div className="flex aspect-video items-center justify-center bg-surface-purple text-brand-purple/40">
         {event.image ? (
@@ -55,7 +55,7 @@ export function GlobalEvents() {
           <p className="mt-5 text-lg leading-relaxed text-muted">{globalEventsIntro.text}</p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 flex flex-wrap justify-center gap-6">
           {events.map((event) => (
             <GlobalEventCard key={event.id} event={event} />
           ))}
