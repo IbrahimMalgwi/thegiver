@@ -1,12 +1,14 @@
-import { Camera, ImageIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { galleryIntro } from '../../data/content'
-import { galleryCategories, getGalleryItems } from '../../services/galleryService'
+import { GalleryViewer } from '../ui/GalleryViewer'
+import { getGalleryItems } from '../../services/galleryService'
 import type { GalleryItem } from '../../types'
 
 export function Gallery() {
   const [items, setItems] = useState<GalleryItem[]>([])
+
+  const [viewer, setViewer] = useState<{ item: GalleryItem; index: number } | null>(null)
 
   useEffect(() => {
     let active = true
@@ -26,52 +28,49 @@ export function Gallery() {
           <p className="mt-5 text-lg leading-relaxed text-muted">{galleryIntro.text}</p>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-2">
-          {galleryCategories.map((category) => (
-            <span
-              key={category}
-              className="rounded-full border border-brand-green/20 bg-white px-4 py-2 text-sm font-semibold text-brand-green shadow-sm"
-            >
-              {category}
-            </span>
+        <div className="mt-10 grid items-start gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {items.map((item) => (
+            <article key={item.id} className="overflow-hidden rounded-lg bg-white shadow-md">
+              {item.images[0] && <button type="button" onClick={() => setViewer({ item, index: 0 })} aria-label={`View photos from ${item.title}`} className="block w-full cursor-pointer overflow-hidden bg-surface-warm">
+                <motion.img
+                  src={item.images[0].src}
+                  alt={item.images[0].alt}
+                  loading="lazy"
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ duration: 0.4, ease: 'easeOut' }}
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </button>}
+              <div className="space-y-3 p-5">
+                <span className="text-xs font-semibold text-brand-green">{item.category}</span>
+                <h3 className="text-xl font-bold text-brand-purple">{item.title}</h3>
+                <div className="space-y-2 text-sm leading-relaxed text-muted">
+                  {item.event && <p>{item.event}</p>}
+                  {item.location && <p>{item.location}</p>}
+                  {item.date && <p>{item.date}</p>}
+                  {item.theme && <p><span className="font-semibold">Theme:</span> {item.theme}</p>}
+                </div>
+                {item.images.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setViewer({ item, index: 0 })}
+                    className="cursor-pointer rounded border border-brand-green/30 px-4 py-2 text-sm font-semibold text-brand-green hover:bg-surface-green focus-visible:outline-2 focus-visible:outline-brand-purple"
+                  >
+                    View {item.images.length === 1 ? 'photo' : `all ${item.images.length} photos`}
+                  </button>
+                )}
+              </div>
+            </article>
           ))}
         </div>
-
-        <div className="mt-10">
-          {items.length > 0 ? (
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-              {items.map((item) => (
-                <figure key={item.id} className="overflow-hidden rounded-lg bg-white shadow-md">
-                  <div className="flex aspect-square items-center justify-center overflow-hidden bg-surface-warm text-brand-green/40">
-                    {item.image ? (
-                      <motion.img
-                        src={item.image}
-                        alt={item.alt}
-                        whileHover={{ scale: 1.08 }}
-                        transition={{ duration: 0.4, ease: 'easeOut' }}
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <Camera aria-hidden="true" size={28} />
-                    )}
-                  </div>
-                  <figcaption className="px-3 py-3 text-xs font-semibold text-muted">
-                    <span className="block text-brand-green">{item.category}</span>
-                    {item.title}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-brand-purple/20 bg-white/60 px-6 py-16 text-center">
-              <ImageIcon aria-hidden="true" size={36} className="text-brand-green/60" />
-              <p className="mt-4 max-w-md leading-relaxed text-muted">
-                Photos from our programs and community work will appear here soon. Follow us to see our impact as it unfolds.
-              </p>
-            </div>
-          )}
-        </div>
       </div>
+      {viewer && (
+        <GalleryViewer
+          item={viewer.item}
+          initialIndex={viewer.index}
+          onClose={() => setViewer(null)}
+        />
+      )}
     </section>
   )
 }

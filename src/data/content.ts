@@ -439,7 +439,7 @@ export const globalEventsIntro: TextSectionContent = {
 
 export const galleryIntro: TextSectionContent = {
   headline: 'Gallery & Impact',
-  text: 'Moments from our work across Nigeria — from health and hygiene to education, outreach, and empowerment. Photos from our activities will appear here.',
+  text: 'Moments from our work across Nigeria — from health and hygiene to education, outreach, and empowerment. Explore photos from our conferences and capacity building activities.',
 }
 
 export const contactIntro: TextSectionContent = {

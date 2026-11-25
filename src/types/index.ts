@@ -94,9 +94,10 @@ export interface GlobalEvent {
   id: string
   title: string
   /** Month and day the observance falls on each year, formatted "MM-DD". */
-  monthDay: string
+  monthDay?: string
   description: string
   image: string | null
+  images?: { src: string; alt: string }[]
 }
 
 
@@ -108,13 +109,16 @@ export type GalleryCategory =
   | 'Economic Empowerment'
   | 'Youth & Leadership'
 
-/** Gallery record. Shaped to map onto a future Supabase `gallery` table. */
+/** Conference and its photographs displayed in the gallery. */
 export interface GalleryItem {
   id: string
   title: string
   category: GalleryCategory
-  image: string | null
-  alt: string
+  location?: string
+  date?: string
+  event?: string
+  theme?: string
+  images: { src: string; alt: string }[]
 }
 
 export interface MemberSocials {

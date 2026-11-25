@@ -1,11 +1,14 @@
 import { Calendar, PartyPopper } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { GalleryViewer } from '../components/ui/GalleryViewer'
 import { globalEventsIntro } from '../data/content'
 import { formatMonthDay, getGlobalEvents } from '../services/globalEventsService'
 import type { GlobalEvent } from '../types'
 
 function GlobalEventCard({ event }: { event: GlobalEvent }) {
+  const [viewerOpen, setViewerOpen] = useState(false)
+
   return (
     <motion.article
       whileHover={{ y: -6 }}
@@ -15,19 +18,27 @@ function GlobalEventCard({ event }: { event: GlobalEvent }) {
     >
       <div className="flex aspect-video items-center justify-center bg-surface-purple text-brand-purple/40">
         {event.image ? (
-          <img src={event.image} alt={event.title} className="h-full w-full object-cover" />
+          <img src={event.image} alt={event.images?.[0]?.alt ?? event.title} className="h-full w-full object-cover" />
         ) : (
           <PartyPopper aria-hidden="true" size={32} />
         )}
       </div>
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-bold tracking-normal text-brand-purple">{event.title}</h3>
-        <span className="mt-3 inline-flex w-fit items-center gap-2 text-sm font-semibold text-muted">
+        {event.monthDay && <span className="mt-3 inline-flex w-fit items-center gap-2 text-sm font-semibold text-muted">
           <Calendar aria-hidden="true" size={16} className="text-brand-green" />
           {formatMonthDay(event.monthDay)}
-        </span>
+        </span>}
         <p className="mt-4 leading-relaxed text-muted">{event.description}</p>
+        {event.images && event.images.length > 0 && (
+          <button type="button" onClick={() => setViewerOpen(true)} className="mt-4 w-fit cursor-pointer rounded border border-brand-green/30 px-4 py-2 text-sm font-semibold text-brand-green hover:bg-surface-green">
+            View more
+          </button>
+        )}
       </div>
+      {viewerOpen && event.images && (
+        <GalleryViewer startWithGrid item={{ title: event.title, images: event.images }} initialIndex={0} onClose={() => setViewerOpen(false)} />
+      )}
     </motion.article>
   )
 }

@@ -46,6 +46,27 @@ Dignity for All provides menstrual hygiene products, health education, and hygie
 
 The frontend is architected so that events, gallery, projects, and donations are served through a `src/services` layer. This currently returns static/mock data and can later be backed by Supabase without redesigning the UI. Online donation processing is intentionally **not** implemented yet — the donation flow routes through a single abstraction (`src/services/donationService.ts`) that a payment provider can plug into later.
 
+### Adding gallery events
+
+Edit `src/data/gallery.ts` and append an entry to `galleryItems`. Put the event photos in `public/images/<event-folder>/`; image URLs start with `/images/` (omit `/public`). Each entry automatically gets a gallery card and a photo viewer. Add as many photos as needed to its `images` array.
+
+```ts
+{
+  id: 'unique-event-id',
+  title: 'Event name',
+  category: 'Economic Empowerment',
+  date: 'November 2026',
+  location: 'Abuja',
+  theme: 'Event theme',
+  images: [
+    { src: '/images/MyEvent/photo1.jpeg', alt: 'Describe the first photo' },
+    { src: '/images/MyEvent/photo2.jpeg', alt: 'Describe the second photo' },
+  ],
+},
+```
+
+Use a unique `id`, a category from `GalleryCategory` in `src/types/index.ts`, and at least one photo. The `date`, `location`, `event`, and `theme` fields are optional. Rebuild and deploy the website to publish new events.
+
 ### Getting started
 
 ```bash

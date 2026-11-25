@@ -32,7 +32,7 @@ function validateGlobalEvents(events: GlobalEvent[]): GlobalEvent[] {
     if (!event.description.trim()) {
       throw new Error(`globalEvents: event "${event.id}" needs a non-empty description.`)
     }
-    if (!MONTH_DAY_PATTERN.test(event.monthDay)) {
+    if (event.monthDay !== undefined && !MONTH_DAY_PATTERN.test(event.monthDay)) {
       throw new Error(
         `globalEvents: event "${event.id}" has an invalid monthDay "${event.monthDay}" — expected "MM-DD".`,
       )
@@ -50,5 +50,16 @@ export const globalEvents: GlobalEvent[] = validateGlobalEvents([
     description:
       'Honoring aid workers and communities who respond to crisis, and renewing the call to protect and support people affected by conflict and disaster.',
     image: 'images/Humanitarian.jpeg',
-  }
+  },
+  {
+    id: 'activism-against-gender-based-violence',
+    title: 'Activism Against Gender-Based Violence',
+    description: 'Ensuring justice, protecting survivors, and ending impunity through community awareness, survivor support and referral, digital safety training, and advocacy for justice.',
+    image: '/images/gbv/gbv.jpeg',
+    images: [
+      { src: '/images/gbv/gbv.jpeg', alt: 'We Rise campaign poster featuring a woman in orange and calls for community awareness and survivor support' },
+      { src: '/images/gbv/gbv1.jpeg', alt: 'Orange and purple 16 Days of Activism poster calling for justice, survivor protection, and an end to impunity' },
+      { src: '/images/gbv/gbv2.jpeg', alt: 'We Rise poster featuring three women and a call to end violence against women and girls' },
+    ],
+  },
 ])
